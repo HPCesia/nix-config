@@ -28,6 +28,12 @@
           baidu.metaData.hidden = true;
         };
       };
+      extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
+        ublock-origin
+        bitwarden
+        tampermonkey
+        rsshub-radar
+      ];
       settings = {
         # No First Run
         "app.normandy.first_run" = false;
@@ -35,6 +41,8 @@
         "toolkit.telemetry.reportingpolicy.firstRun" = false;
         "trailhead.firstrun.didSeeAboutWelcome" = true;
         "browser.toolbarbuttons.introduced.sidebar-button" = true;
+        "sidebar.old-sidebar.has-used" = true;
+        "sidebar.new-sidebar.has-used" = true;
         # Language
         "general.useragent.locale" = "zh-CN";
         "intl.locale.requested" = "zh-CN,en-US";
@@ -47,9 +55,11 @@
         "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
         # General
         "browser.startup.page" = 3; # Open prev session pages
+        "browser.tabs.unloadOnLowMemory" = true;
         # Apperance
         "browser.newtabpage.activity-stream.feeds.topsites" = false;
         "browser.newtabpage.activity-stream.default.sites" = "";
+        "browser.toolbars.bookmarks.visibility" = "always";
         "sidebar.verticalTabs" = true;
         "sidebar.main.tools" = "syncedtabs";
         "sidebar.visibility" = "expand-on-hover";
@@ -75,9 +85,7 @@
             "PersonalToolbar" = ["personal-bookmarks"];
           };
           "seen" = ["developer-button"];
-          "dirtyAreaCache" = ["nav-bar" "TabsToolbar" "vertical-tabs" "toolbar-menubar" "PersonalToolbar"];
-          "currentVersion" = 22;
-          "newElementCount" = 7;
+          "dirtyAreaCache" = [];
         };
         # Disable Telemetry
         "toolkit.telemetry.unified" = false;
