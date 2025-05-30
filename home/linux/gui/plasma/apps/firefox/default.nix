@@ -4,12 +4,96 @@
     languagePacks = ["zh-CN" "en-US"];
 
     policies = {
+      DisableAppUpdate = true;
+      DisablePocket = true;
       DisableTelemetry = true;
       DontCheckDefaultBrowser = true;
+      NoDefaultBookmarks = true;
+      OfferToSaveLogins = false;
+      PasswordManagerEnabled = false;
     };
 
     profiles.default = {
-      settings = {};
+      id = 0;
+      isDefault = true;
+      search = {
+        default = "bing";
+        privateDefault = "duckduckgo";
+        order = [
+          "bing"
+          "google"
+          "duckduckgo"
+        ];
+        engines = {
+          baidu.metaData.hidden = true;
+        };
+      };
+      settings = {
+        # No First Run
+        "app.normandy.first_run" = false;
+        "doh-rollout.doneFirstRun" = true;
+        "toolkit.telemetry.reportingpolicy.firstRun" = false;
+        "trailhead.firstrun.didSeeAboutWelcome" = true;
+        "browser.toolbarbuttons.introduced.sidebar-button" = true;
+        # Language
+        "general.useragent.locale" = "zh-CN";
+        "intl.locale.requested" = "zh-CN,en-US";
+        "browser.translations.mostRecentTargetLanguages" = "zh-Hans";
+        # No Ads
+        "browser.urlbar.suggest.topsites" = false;
+        "browser.urlbar.suggest.trending" = false;
+        "browser.newtabpage.pinned" = [];
+        "browser.newtabpage.activity-stream.showSponsored" = false;
+        "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
+        # General
+        "browser.startup.page" = 3; # Open prev session pages
+        # Apperance
+        "browser.newtabpage.activity-stream.feeds.topsites" = false;
+        "browser.newtabpage.activity-stream.default.sites" = "";
+        "sidebar.verticalTabs" = true;
+        "sidebar.main.tools" = "syncedtabs";
+        "sidebar.visibility" = "expand-on-hover";
+        "browser.uiCustomization.state" = {
+          "placements" = {
+            "widget-overflow-fixed-list" = [];
+            "unified-extensions-area" = [];
+            "nav-bar" = [
+              "sidebar-button"
+              "back-button"
+              "forward-button"
+              "stop-reload-button"
+              "vertical-spacer"
+              "customizableui-special-spring7"
+              "urlbar-container"
+              "customizableui-special-spring2"
+              "unified-extensions-button"
+              "fxa-toolbar-menu-button"
+            ];
+            "toolbar-menubar" = ["menubar-items"];
+            "TabsToolbar" = [];
+            "vertical-tabs" = ["tabbrowser-tabs"];
+            "PersonalToolbar" = ["personal-bookmarks"];
+          };
+          "seen" = ["developer-button"];
+          "dirtyAreaCache" = ["nav-bar" "TabsToolbar" "vertical-tabs" "toolbar-menubar" "PersonalToolbar"];
+          "currentVersion" = 22;
+          "newElementCount" = 7;
+        };
+        # Disable Telemetry
+        "toolkit.telemetry.unified" = false;
+        "toolkit.telemetry.enabled" = false;
+        "toolkit.telemetry.server" = "data:,";
+        "toolkit.telemetry.archive.enabled" = false;
+        "toolkit.telemetry.newProfilePing.enabled" = false;
+        "toolkit.telemetry.shutdownPingSender.enabled" = false;
+        "toolkit.telemetry.updatePing.enabled" = false;
+        "toolkit.telemetry.bhrPing.enabled" = false;
+        "toolkit.telemetry.firstShutdownPing.enabled" = false;
+        "toolkit.telemetry.shutdownPingSender.enabledFirstsession" = false;
+        "browser.ping-centre.telemetry" = false;
+        "browser.newtabpage.activity-stream.feeds.telemetry" = false;
+        "browser.newtabpage.activity-stream.telemetry" = false;
+      };
     };
   };
 }
