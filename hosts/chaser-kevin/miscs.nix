@@ -1,4 +1,8 @@
-{lib, pkgs, ...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   # Lid Settings
   services.logind = {
     lidSwitch = "hibernate";
@@ -13,12 +17,6 @@
     serviceConfig.Type = "simple";
   };
 
-  # Bluetooth
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-  };
-
   # Cooling management
   services.thermald.enable = lib.mkDefault true;
 
@@ -26,7 +24,7 @@
   services.libinput.enable = true;
 
   # Network Manager
-	environment.systemPackages = with pkgs; [ networkmanagerapplet ];
+  environment.systemPackages = with pkgs; [networkmanagerapplet];
 
   # √(3200² + 2000²) px / 16 in ≃ 235 dpi
   services.xserver.dpi = 235;
