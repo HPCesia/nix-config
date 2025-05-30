@@ -9,12 +9,15 @@
   myvars,
   ...
 }: let
-  inherit (inputs) nixpkgs home-manager;
+  inherit (inputs) nixpkgs home-manager nur;
 in
   nixpkgs.lib.nixosSystem {
     inherit system specialArgs;
     modules =
       nixos-modules
+      ++ [
+        nur.modules.nixos.default
+      ]
       ++ (
         lib.optionals ((lib.lists.length home-modules) > 0)
         [
