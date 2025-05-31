@@ -37,6 +37,9 @@
         "ssh://git@codeberg.org/HPCesia" = {
           insteadOf = "https://codeberg.org/HPCesia";
         };
+        "ssh://git@repo.hpcesia.com:2222/HPCesia" = {
+          insteadOf = "https://repo.hpcesia.com/HPCesia";
+        };
       };
     };
 
