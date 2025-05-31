@@ -6,6 +6,7 @@ with pkgs.vscode-extensions; [
 
   # Appearance
   pkief.material-icon-theme
+  catppuccin.catppuccin-vsc
 
   # Utils
   mhutchie.git-graph
