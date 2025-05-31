@@ -3,7 +3,7 @@
   myvars,
   ...
 }: {
-  environment.variables.EDITOR = "helix";
+  environment.variables.EDITOR = "hx";
   environment.systemPackages = with pkgs; [
     fastfetch
     helix
