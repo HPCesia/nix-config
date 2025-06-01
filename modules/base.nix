@@ -2,7 +2,9 @@
   pkgs,
   myvars,
   ...
-}: {
+} @ args: {
+  nixpkgs.overlays = import ../overlays args;
+
   environment.variables.EDITOR = "hx";
   environment.systemPackages = with pkgs; [
     fastfetch
