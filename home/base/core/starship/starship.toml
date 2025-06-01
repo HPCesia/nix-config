@@ -80,7 +80,7 @@ truncation_symbol = "…/"
 "图片" = " "
 "Videos" = " "
 "视频" = " "
-"Developer" = "󰲋 "
+"Development" = "󰲋 "
 "开发" = "󰲋 "
 "Desktop" = " "
 "桌面" = " "
@@ -152,7 +152,7 @@ style = "bg:sapphire"
 format = '[[ $symbol( $context) ](fg:crust bg:sapphire)]($style)'
 
 [conda]
-symbol = "  "
+symbol = ""
 style = "fg:crust bg:sapphire"
 format = '[$symbol$environment ]($style)'
 ignore_base = false
