@@ -1,4 +1,10 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  fcitx5-rime = pkgs.fcitx5-rime.override {
+    rimeDataPkgs = [pkgs.nur.repos.xyenon.rime-ice];
+  };
+in {
+  catppuccin.fcitx5.enable = true;
+
   xdg.configFile = {
     "fcitx5/profile" = {
       source = ./profile;
@@ -11,12 +17,14 @@
   i18n.inputMethod = {
     enable = true;
     type = "fcitx5";
-    fcitx5.addons = with pkgs; [
-      fcitx5-rime
-      # needed enable rime using configtool after installed
-      fcitx5-configtool
-      fcitx5-chinese-addons
-      fcitx5-gtk # gtk im module
-    ];
+    fcitx5 = {
+      # To fix configtool in plasma6
+      fcitx5-with-addons = pkgs.qt6Packages.fcitx5-with-addons;
+      addons = with pkgs; [
+        fcitx5-rime
+        fcitx5-gtk # gtk im module
+      ];
+      waylandFrontend = true;
+    };
   };
 }
