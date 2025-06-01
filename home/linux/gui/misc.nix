@@ -1,5 +1,13 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
+    chromium
+
+    thunderbird
+
+    # Message
+    telegram-desktop
+    qq
+    wechat-uos
   ];
 
   # allow fontconfig to discover fonts and configurations installed through home.packages
