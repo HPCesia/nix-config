@@ -11,7 +11,6 @@ in {
     extensions =
       (with pkgs.vscode-extensions; [
         myriad-dreamin.tinymist # Typst LSP
-        tamasfe.even-better-toml # TOML syntax
         tomoki1207.pdf # PDF Viewer
       ])
       ++ baseExtensions;

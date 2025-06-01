@@ -8,32 +8,38 @@ in {
   imports = mylib.scanPaths ./.;
 
   programs.vscode.profiles.default = {
-    enableUpdateCheck = false;
-    enableExtensionUpdateCheck = false;
-
     userSettings = {
-      # --- Editor Settings ---
+      # --- Editor Settings --- #
       "editor.fontSize" = 16;
       "editor.fontLigatures" = true;
       "editor.guides.bracketPairs" = true;
       "editor.formatOnSave" = true;
-      # --- Terminal Settings ---
+      "editor.unicodeHighlight.allowedLocales"."zh-hans" = true;
+      # --- Terminal Settings --- #
       "terminal.integrated.fontSize" = 14;
-      # --- Workbench Settings ---
+      "terminal.integrated.minimumContrastRatio" = 1;
+      # --- Workbench Settings --- #
+      "workbench.colorTheme" = "Catppuccin Macchiato";
       "workbench.iconTheme" = "material-icon-theme";
       "workbench.startupEditor" = "none";
-      # --- Extension Settings ---
+      # --- Extension Settings --- #
       "nix.formatterPath" = "alejandra";
-      # --- Other Settings ---
+      # --- Update Settings --- #
+      "extensions.autoCheckUpdates" = false;
+      "extensions.autoUpdate" = false;
+      "update.mode" = "none";
+      # --- Other Settings --- #
+      # Settings apply to all profiles
       "telemetry.telemetryLevel" = "off";
       "security.workspace.trust.untrustedFiles" = "open";
-      "window.newWindowProfile" = "default";
+      "window.newWindowProfile" = "Default";
       "workbench.settings.applyToAllProfiles" = [
         "editor.fontSize"
         "editor.fontLigatures"
         "editor.guides.bracketPairs"
-        "editor.semanticTokenColorCustomizations"
+        "editor.formatOnSave"
         "terminal.integrated.fontSize"
+        "workbench.colorTheme"
         "workbench.iconTheme"
         "workbench.startupEditor"
       ];

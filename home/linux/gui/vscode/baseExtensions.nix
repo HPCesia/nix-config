@@ -1,7 +1,7 @@
 pkgs:
 with pkgs.vscode-extensions; [
   # Translation
-  ms-ceintl.vscode-language-pack-zh-hans
+  # ms-ceintl.vscode-language-pack-zh-hans
   w88975.code-translate
 
   # Appearance
@@ -22,4 +22,8 @@ with pkgs.vscode-extensions; [
 
   # Nix
   jnoortheen.nix-ide
+
+  # Configuration languages
+  tamasfe.even-better-toml
+  redhat.vscode-yaml
 ]
