@@ -12,7 +12,7 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = ["xhci_pci" "nvme" "thunderbolt" "usb_storage" "sd_mod" "sdhci_pci"];
+  boot.initrd.availableKernelModules = ["xhci_pci" "nvme" "thunderbolt" "usbhid" "sdhci_pci"];
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
@@ -23,22 +23,27 @@
     options = ["subvol=root"];
   };
 
-  fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/d1fb32f2-1dc0-435d-ad0f-1de0a121dbef";
-    fsType = "btrfs";
-    options = ["subvol=home"];
-  };
-
   fileSystems."/nix" = {
     device = "/dev/disk/by-uuid/d1fb32f2-1dc0-435d-ad0f-1de0a121dbef";
     fsType = "btrfs";
     options = ["subvol=nix"];
   };
 
+  fileSystems."/home" = {
+    device = "/dev/disk/by-uuid/d1fb32f2-1dc0-435d-ad0f-1de0a121dbef";
+    fsType = "btrfs";
+    options = ["subvol=home"];
+  };
+
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/D032-DF36";
     fsType = "vfat";
     options = ["fmask=0022" "dmask=0022"];
+  };
+
+  fileSystems."/mnt/share" = {
+    device = "/dev/disk/by-uuid/4200-EC69";
+    fsType = "exfat";
   };
 
   swapDevices = [
