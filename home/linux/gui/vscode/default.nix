@@ -1,6 +1,4 @@
 {
-  mylib,
-  myvars,
   config,
   lib,
   pkgs,
@@ -16,6 +14,9 @@
     commandLineArgs = concatLists [
       ["--extensions-dir" extensionsDir]
       ["--user-data-dir" userDataDir]
+      ["--ozone-platform-hint=auto"]
+      ["--enable-wayland-ime"]
+      ["--wayland-text-input-version=3"]
     ];
   };
 in {
