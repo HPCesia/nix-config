@@ -3,5 +3,5 @@
   config,
   ...
 }: {
-  imports = mylib.scanPaths ./.;
+  imports = mylib.scanModules ./.;
 }

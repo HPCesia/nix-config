@@ -4,7 +4,7 @@
   ...
 }: {
   imports =
-    (mylib.scanPaths ./.)
+    (mylib.scanModules ./.)
     ++ [catppuccin.homeModules.catppuccin];
 
   catppuccin.flavor = "macchiato";
