@@ -15,6 +15,7 @@
   base-modules = {
     nixos-modules = map mylib.relativeToRoot [
       # common
+      "secrets/nixos.nix"
       "modules/nixos/desktop.nix"
       # host specific
       "hosts/chaser-${name}"

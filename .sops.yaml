@@ -1,0 +1,10 @@
+keys:
+  - &admin_hpcesia 56AC2ED35E51AFE66EAAA569878BD0F02991BAAE
+  - &chaser_kevin age1sur93fevme8az4v6txee9uw7gk8xcpz2u0mfzvayavrcx9zkefxsmcpnln
+creation_rules:
+  - path_regex: ^secrets/base/secrets\.yaml$
+    key_groups:
+      - pgp:
+          - *admin_hpcesia
+        age:
+          - *chaser_kevin
