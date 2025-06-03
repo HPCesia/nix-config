@@ -4,7 +4,7 @@
   attrs = import ./attrs.nix {inherit lib;};
 
   relativeToRoot = lib.path.append ../.;
-  scanPaths = path:
+  scanModules = path:
     builtins.map (f: (path + "/${f}")) (
       builtins.attrNames (
         lib.attrsets.filterAttrs (

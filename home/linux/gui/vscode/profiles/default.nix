@@ -5,7 +5,7 @@
 }: let
   baseExtensions = import ../baseExtensions.nix pkgs;
 in {
-  imports = mylib.scanPaths ./.;
+  imports = mylib.scanModules ./.;
 
   programs.vscode.profiles.default = {
     userSettings = {
