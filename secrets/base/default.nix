@@ -1,0 +1,4 @@
+{sops, ...}: {
+  sops.secrets = {
+  };
+}
