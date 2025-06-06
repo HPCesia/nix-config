@@ -1,17 +1,10 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{...}: {
   programs.bash = {
     enable = true;
     enableCompletion = true;
   };
 
-  programs.fish = {
+  programs.nushell = {
     enable = true;
-    shellAliases = {
-      g = "lazygit";
-    };
   };
 }
