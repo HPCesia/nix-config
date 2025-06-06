@@ -23,7 +23,14 @@ in {
       "workbench.iconTheme" = "material-icon-theme";
       "workbench.startupEditor" = "none";
       # --- Extension Settings --- #
-      "nix.formatterPath" = "alejandra";
+      "GitCommitPlugin.ShowEmoji" = false;
+      "GitCommitPlugin.MaxSubjectCharacters" = 25;
+      "github.copilot.advanced".useLanguageServer = true;
+      "nix.enableLanguageServer" = true;
+      "nix.serverSettings".nil.formatting.command = ["alejandra"];
+      "evenBetterToml.formatter.alignEntries" = true;
+      "evenBetterToml.formatter.alignComments" = true;
+      "evenBetterToml.formatter.allowedBlankLines" = 1;
       # --- Update Settings --- #
       "extensions.autoCheckUpdates" = false;
       "extensions.autoUpdate" = false;
@@ -34,6 +41,7 @@ in {
       "security.workspace.trust.untrustedFiles" = "open";
       "window.newWindowProfile" = "Default";
       "workbench.settings.applyToAllProfiles" = [
+        # Normal
         "editor.fontSize"
         "editor.fontLigatures"
         "editor.guides.bracketPairs"
@@ -42,6 +50,15 @@ in {
         "workbench.colorTheme"
         "workbench.iconTheme"
         "workbench.startupEditor"
+        # Extension
+        "GitCommitPlugin.ShowEmoji"
+        "GitCommitPlugin.MaxSubjectCharacters"
+        "github.copilot.advanced"
+        "nix.enableLanguageServer"
+        "nix.serverSettings"
+        "evenBetterToml.formatter.alignEntries"
+        "evenBetterToml.formatter.alignComments"
+        "evenBetterToml.formatter.allowedBlankLines"
       ];
     };
 
