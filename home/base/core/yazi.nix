@@ -1,8 +1,10 @@
 {pkgs, ...}: {
+  catppuccin.yazi.enable = true;
+
   programs.yazi = {
     enable = true;
     enableBashIntegration = true;
-    enableFishIntegration = true;
+    enableNushellIntegration = true;
     settings = {
       manager = {
         show_hidden = true;

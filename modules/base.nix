@@ -10,7 +10,7 @@
     fastfetch
     helix
     micro
-    fish
+    nushell
     git
 
     # archives

@@ -1,14 +1,12 @@
 {
   config,
-  lib,
   pkgs,
-  pkgs-unstable,
   ...
 }: {
   # add user's shell into /etc/shells
   environment.shells = with pkgs; [
     bashInteractive
-    fish
+    nushell
   ];
   # set user's default shell system-wide
   users.defaultUserShell = pkgs.bashInteractive;
