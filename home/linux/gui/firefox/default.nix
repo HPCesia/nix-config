@@ -6,8 +6,10 @@
     policies = {
       DisableAppUpdate = true;
       DisablePocket = true;
+      DisableSetDesktopBackground = true;
       DisableTelemetry = true;
       DontCheckDefaultBrowser = true;
+      ExtensionUpdate = false;
       NoDefaultBookmarks = true;
       OfferToSaveLogins = false;
       PasswordManagerEnabled = false;
@@ -17,6 +19,7 @@
       id = 0;
       isDefault = true;
       search = {
+        force = true;
         default = "bing";
         privateDefault = "duckduckgo";
         order = [
@@ -33,6 +36,7 @@
         bitwarden
         tampermonkey
         rsshub-radar
+        auto-tab-discard
       ];
       settings = {
         # No First Run
