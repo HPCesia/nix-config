@@ -21,6 +21,7 @@
       "users"
       "networkmanager"
       "wheel"
+      "aria2"
     ];
   };
 

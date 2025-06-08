@@ -37,6 +37,7 @@
         tampermonkey
         rsshub-radar
         auto-tab-discard
+        aria2-integration
       ];
       settings = {
         # No First Run

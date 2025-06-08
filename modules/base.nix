@@ -1,6 +1,7 @@
 {
   pkgs,
   myvars,
+  config,
   ...
 }: {
   environment.variables.EDITOR = "hx";
@@ -27,6 +28,15 @@
     file
     tree
   ];
+
+  services.aria2 = {
+    enable = true;
+    rpcSecretFile = config.sops.secrets.aria2-rpc-secret.path;
+    settings = {
+      enable-rpc = true;
+      rpc-listen-port = 6800;
+    };
+  };
 
   users.users.${myvars.username} = {
     description = myvars.userfullname;
