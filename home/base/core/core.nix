@@ -8,7 +8,6 @@
 
     yq-go # yaml processor https://github.com/mikefarah/yq
     delta # A viewer for git and diff output
-    lazygit # Git terminal UI.
   ];
 
   programs = {
