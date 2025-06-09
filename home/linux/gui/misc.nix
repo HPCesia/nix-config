@@ -1,12 +1,13 @@
 {
   pkgs,
+  pkgs-unstable,
   lib,
   ...
 }: let
   inherit (lib.lists) concatLists;
 
   # Fix Electron IME bug
-  cherrystudio = pkgs.cherry-studio.override {
+  cherrystudio = pkgs-unstable.cherry-studio.override {
     commandLineArgs = concatLists [
       ["--ozone-platform-hint=auto"]
       ["--enable-wayland-ime"]
