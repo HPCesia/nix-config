@@ -20,6 +20,12 @@
     p7zip
     gnutar
 
+    # text processing
+    gnugrep
+    gnused
+    gawk
+    jq
+
     # networking tools
     wget
     curl
@@ -27,6 +33,8 @@
     # misc
     file
     tree
+    which
+    findutils
   ];
 
   services.aria2 = {
