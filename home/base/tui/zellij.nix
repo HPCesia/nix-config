@@ -7,7 +7,6 @@ in {
 
   programs.zellij = {
     enable = true;
-    enableBashIntegration = true;
     settings = {
       show_startup_tips = false;
       show_release_notes = false;
@@ -17,8 +16,8 @@ in {
   # auto start zellij in nushell
   programs.nushell.extraConfig = ''
     # auto start zellij
-    # except when in emacs or zellij itself
-    if (not ("ZELLIJ" in $env)) and (not ("INSIDE_EMACS" in $env)) {
+    # except when in VSCode or zellij itself
+    if (not ("ZELLIJ" in $env)) and (not ($env.TERM_PROGRAM? == "vscode")) {
       if "ZELLIJ_AUTO_ATTACH" in $env and $env.ZELLIJ_AUTO_ATTACH == "true" {
         ^zellij attach -c
       } else {
