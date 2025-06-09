@@ -183,6 +183,26 @@
         "type": "github"
       }
     },
+    "nur-hpcesia": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1749475660,
+        "narHash": "sha256-KAiakTEO+b7mVX7mdR6RiUDV5DsoBcn+uug9qkhMq2s=",
+        "owner": "HPCesia",
+        "repo": "nur-packages",
+        "rev": "158b7718c9fea9ed09d6f825c978891b197baf8d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "HPCesia",
+        "repo": "nur-packages",
+        "type": "github"
+      }
+    },
     "plasma-manager": {
       "inputs": {
         "home-manager": [
@@ -216,6 +236,7 @@
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nur": "nur",
+        "nur-hpcesia": "nur-hpcesia",
         "plasma-manager": "plasma-manager",
         "sops-nix": "sops-nix"
       }

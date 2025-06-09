@@ -37,5 +37,10 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nur-hpcesia = {
+      url = "github:HPCesia/nur-packages";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }
