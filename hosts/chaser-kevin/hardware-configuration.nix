@@ -44,6 +44,7 @@
   fileSystems."/mnt/share" = {
     device = "/dev/disk/by-uuid/4200-EC69";
     fsType = "exfat";
+    options = ["uid=1000" "gid=100"];
   };
 
   swapDevices = [
