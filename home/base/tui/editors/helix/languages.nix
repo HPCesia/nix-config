@@ -8,7 +8,7 @@
           tab-width = 2;
           unit = "  ";
         };
-        formatter = {command = "alejandra";};
+        language-servers = ["nil"];
       }
       {
         name = "typst";
@@ -20,5 +20,18 @@
         formatter = {command = "typstyle";};
       }
     ];
+    language-server = {
+      nil.config = {
+          formatting.command = "alejandra";
+          nix = {
+            maxMemoryMB = 4096;
+            flake = {
+              autoArchive = false;
+              autoEvalInputs = true;
+            };
+          };
+        };
+
+    };
   };
 }
