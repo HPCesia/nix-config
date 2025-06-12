@@ -31,5 +31,15 @@
       enableBashIntegration = true;
       enableNushellIntegration = true;
     };
+
+    # rbw, a unofficial CLI Bitwarden client
+    rbw = {
+      enable = true;
+      settings = {
+        base_url = "https://bitwarden.hpcesia.com/";
+        email = "me@hpcesia.com";
+        pinentry = pkgs.pinentry-qt;
+      };
+    };
   };
 }
