@@ -21,8 +21,6 @@ in {
   home.packages = with pkgs; [
     chromium
 
-    thunderbird
-
     # Message
     telegram-desktop
     qq
