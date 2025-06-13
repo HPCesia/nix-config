@@ -38,9 +38,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # === Follows are myself repos === #
     nur-hpcesia = {
       url = "github:HPCesia/nur-packages";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    wallpapers = {
+      url = "github:HPCesia/Wallpapers";
+      flake = false;
     };
   };
 }

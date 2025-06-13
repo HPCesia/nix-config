@@ -238,7 +238,8 @@
         "nur": "nur",
         "nur-hpcesia": "nur-hpcesia",
         "plasma-manager": "plasma-manager",
-        "sops-nix": "sops-nix"
+        "sops-nix": "sops-nix",
+        "wallpapers": "wallpapers"
       }
     },
     "sops-nix": {
@@ -279,6 +280,22 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "wallpapers": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1749841335,
+        "narHash": "sha256-XvAguQMCZM9DCrIuOvvl4oE9p6kRPA2rLjTWLSeFzrM=",
+        "owner": "HPCesia",
+        "repo": "Wallpapers",
+        "rev": "0f55a4b6e665c8c20dea5c8ad35fc1e0cdf3b088",
+        "type": "github"
+      },
+      "original": {
+        "owner": "HPCesia",
+        "repo": "Wallpapers",
         "type": "github"
       }
     }
