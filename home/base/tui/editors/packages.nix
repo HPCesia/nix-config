@@ -18,6 +18,7 @@
     marksman # Markdown LSP
     tinymist # Typst LSP
     typstyle # Typst Formatter
+    mdx-language-server
 
     # === General Purpose Languages === #
     # -- C/C++
@@ -61,5 +62,7 @@
     nodePackages.vscode-langservers-extracted # HTML/CSS/JSON/ESLint LSP extracted from vscode
     nodePackages."@tailwindcss/language-server"
     nodePackages."@astrojs/language-server"
+    stylelint-lsp
+    nodePackages.prettier
   ];
 }
