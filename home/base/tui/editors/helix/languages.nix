@@ -21,17 +21,16 @@
       }
     ];
     language-server = {
-      nil.config = {
-          formatting.command = "alejandra";
-          nix = {
-            maxMemoryMB = 4096;
-            flake = {
-              autoArchive = false;
-              autoEvalInputs = true;
-            };
+      nil.config.nil = {
+        formatting.command = ["alejandra"];
+        nix = {
+          maxMemoryMB = 4096;
+          flake = {
+            autoArchive = false;
+            autoEvalInputs = true;
           };
         };
-
+      };
     };
   };
 }
