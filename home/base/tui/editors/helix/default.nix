@@ -1,5 +1,5 @@
 {...}: {
-  imports = [./languages.nix];
+  imports = [./languages];
 
   catppuccin.helix.enable = true;
 

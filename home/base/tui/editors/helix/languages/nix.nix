@@ -10,15 +10,6 @@
         };
         language-servers = ["nil"];
       }
-      {
-        name = "typst";
-        auto-format = true;
-        indent = {
-          tab-width = 2;
-          unit = "  ";
-        };
-        formatter = {command = "typstyle";};
-      }
     ];
     language-server = {
       nil.config.nil = {
