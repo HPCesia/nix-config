@@ -50,6 +50,10 @@
     description = myvars.userfullname;
   };
 
+  nix.extraOptions = ''
+    !include ${config.sops.secrets.nix-access-tokens.path}
+  '';
+
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];
     trusted-users = [myvars.username];
