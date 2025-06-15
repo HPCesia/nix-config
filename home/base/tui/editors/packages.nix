@@ -57,6 +57,9 @@
     # === Web Development === #
     nodePackages.nodejs
     pnpm
+    bun
+    deno
+
     nodePackages.typescript
     nodePackages.typescript-language-server
     nodePackages.vscode-langservers-extracted # HTML/CSS/JSON/ESLint LSP extracted from vscode

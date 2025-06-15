@@ -15,8 +15,16 @@
           tab-width = 2;
           unit = "  ";
         };
+        roots = [
+          ".prettierignore"
+          ".prettierrc"
+          ".prettierrc.cjs"
+          ".prettierrc.mjs"
+          ".prettierrc.js"
+        ];
         formatter = {
           command = "prettier";
+          args = ["--parser" "mdx"];
         };
         language-servers = ["mdx-language-server"];
       }
