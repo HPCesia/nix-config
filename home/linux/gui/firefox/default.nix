@@ -38,6 +38,7 @@
         rsshub-radar
         auto-tab-discard
         aria2-integration
+        immersive-translate
       ];
       settings = {
         # No First Run
