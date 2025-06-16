@@ -4,8 +4,11 @@
     fontDir.enable = true;
 
     packages = with pkgs; [
-      # noto-fonts
-      # noto-fonts-cjk
+      nur.repos.rewine.ttf-ms-win10
+
+      noto-fonts
+      # noto-fonts-cjk-sans
+      # noto-fonts-cjk-serif
       noto-fonts-emoji
       # noto-fonts-extra
 
@@ -14,9 +17,7 @@
       source-han-sans
       source-han-serif
 
-      # nerdfonts
-      # https://github.com/NixOS/nixpkgs/blob/nixos-unstable-small/pkgs/data/fonts/nerd-fonts/manifests/fonts.json
-      nerd-fonts.symbols-only # symbols icon only
+      lxgw-wenkai
 
       maple-mono.NF-CN
     ];
