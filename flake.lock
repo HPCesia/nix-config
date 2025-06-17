@@ -97,6 +97,22 @@
         "type": "github"
       }
     },
+    "nixos-logo": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1750165136,
+        "narHash": "sha256-0dCNSCCNE6kYUp7XiNWQZp0mY9a3/XDVBnWs7X72eSA=",
+        "owner": "HPCesia",
+        "repo": "nixos-logo",
+        "rev": "d6ffde4c7bf7cbcdadeca42ede2010e4b3e3a957",
+        "type": "github"
+      },
+      "original": {
+        "owner": "HPCesia",
+        "repo": "nixos-logo",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1744463964,
@@ -232,6 +248,7 @@
         "haumea": "haumea",
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
+        "nixos-logo": "nixos-logo",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-unstable": "nixpkgs-unstable",
