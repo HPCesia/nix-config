@@ -48,5 +48,10 @@
       url = "github:HPCesia/Wallpapers";
       flake = false;
     };
+
+    nixos-logo = {
+      url = "github:HPCesia/nixos-logo";
+      flake = false;
+    };
   };
 }

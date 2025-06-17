@@ -1,4 +1,4 @@
-{...}: {
+{nixos-logo, ...}: {
   # Power Control
   programs.plasma.powerdevil = {
     AC.inhibitLidActionWhenExternalMonitorConnected = true;
@@ -44,5 +44,12 @@
       powerButtonAction = "shutDown";
       inhibitLidActionWhenExternalMonitorConnected = true;
     };
+  };
+
+  programs.fastfetch.settings.logo = {
+    type = "kitty-direct";
+    source = "${nixos-logo}/nixos-griseo.png";
+    height = 15;
+    width = 32;
   };
 }
