@@ -6,7 +6,7 @@
 }: let
   inherit (lib.lists) concatLists;
 
-  electronCLA = {
+  chromiumCLA = {
     commandLineArgs = concatLists [
       ["--ozone-platform-hint=auto"]
       ["--enable-wayland-ime"]
@@ -14,9 +14,10 @@
     ];
   };
 
-  # Fix Electron IME bug
-  cherrystudio = pkgs-unstable.cherry-studio.override electronCLA;
-  qq = pkgs.qq.override electronCLA;
+  # Fix Chromium IME bug
+  cherrystudio = pkgs-unstable.cherry-studio.override chromiumCLA;
+  chromium = pkgs.chromium.override chromiumCLA;
+  qq = pkgs.qq.override chromiumCLA;
 in {
   home.packages = with pkgs; [
     chromium
