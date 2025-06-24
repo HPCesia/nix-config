@@ -50,8 +50,15 @@
     description = myvars.userfullname;
   };
 
+  sops.templates.access-tokens = {
+    content = ''
+      access-tokens = github.com=${config.sops.placeholder.github-access-token}
+    '';
+    mode = "0444"; # file must be accessible (r) to all users, because only the build daemon runs as root and not nix evaluator itself.
+  };
+
   nix.extraOptions = ''
-    !include ${config.sops.secrets.nix-access-tokens.path}
+    !include ${config.sops.templates.access-tokens.path}
   '';
 
   nix.settings = {
