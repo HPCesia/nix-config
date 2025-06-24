@@ -10,7 +10,7 @@ let
       keys);
 in {
   sops.secrets = mapSecrets [
-    "nix-access-tokens"
+    "github-access-token"
     "mihomo/providers/yi_yuan"
     "mihomo/providers/mo_jie"
     "aria2-rpc-secret"
