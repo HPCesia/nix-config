@@ -1,7 +1,7 @@
 {pkgs, ...}: let
   baseExtensions = import ../baseExtensions.nix pkgs;
 in {
-  programs.vscode.profiles.astro = {
+  programs.vscode.profiles.Astro = {
     userSettings = {
       "javascript.suggest.paths" = false;
       "typescript.suggest.paths" = false;

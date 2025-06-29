@@ -1,7 +1,7 @@
 {pkgs, ...}: let
   baseExtensions = import ../baseExtensions.nix pkgs;
 in {
-  programs.vscode.profiles.typst = {
+  programs.vscode.profiles.Typst = {
     userSettings = {
       "tinymist.formatterMode" = "typstyle";
       "[typst-code]"."editor.wordSeparators" = "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?";
