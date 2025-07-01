@@ -2,8 +2,8 @@
   programs.plasma.configFile = {
     kdeglobals = {
       General = {
-        TerminalApplication = "ghostty";
-        TerminalService = "com.mitchellh.ghostty";
+        TerminalApplication = "wezterm start --cwd .";
+        TerminalService = "org.wezfurlong.wezterm.desktop";
       };
     };
   };

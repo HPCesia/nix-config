@@ -1,5 +1,5 @@
 {...}: {
   programs.plasma.shortcuts = {
-    "services/com.mitchellh.ghostty"._launch = "Meta+`";
+    "services/org.wezfurlong.wezterm.desktop"._launch = "Meta+`";
   };
 }
