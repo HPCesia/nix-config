@@ -10,7 +10,7 @@
         };
       }
     ];
-    language-server.tinymist = {
+    language-server.tinymist.config = {
       formatterMode = "typstyle";
       formatterIndentSize = 2;
     };
