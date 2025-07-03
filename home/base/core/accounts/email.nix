@@ -3,16 +3,25 @@
   myvars,
   ...
 }: let
-  getPasswd = id: "${pkgs.rbw}/bin/rbw get ${id}";
-
-  forwardEmailSettings = {
+  # forwardEmailSettings = {
+  #   imap = {
+  #     host = "imap.forwardemail.net";
+  #     port = 993;
+  #     tls.enable = true;
+  #   };
+  #   smtp = {
+  #     host = "smtp.forwardemail.net";
+  #     port = 465;
+  #   };
+  # };
+  mxrouteEmailSettings = {
     imap = {
-      host = "imap.forwardemail.net";
+      host = "glacier.mxrouting.net";
       port = 993;
       tls.enable = true;
     };
     smtp = {
-      host = "smtp.forwardemail.net";
+      host = "glacier.mxrouting.net";
       port = 465;
     };
   };
@@ -21,13 +30,12 @@
 in {
   accounts.email.accounts = {
     "${myvars.useremail}" =
-      forwardEmailSettings
+      mxrouteEmailSettings
       // {
         realName = myvars.userfullname;
         userName = myvars.useremail;
         address = myvars.useremail;
         primary = true;
-        passwordCommand = getPasswd "6e58fb5d-1a74-4fd8-8b88-d793a43ea218";
       };
     "hpcesia@outlook.com" =
       outlookSettings
