@@ -1,19 +1,35 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
+    # Misc
     gnupg
+    gnumake
 
-    fzf # Interactively filter its input using fuzzy searching, not limit to filenames.
     fd # search for files by name, faster than find
     ripgrep # search for files by its content, replacement of grep
-
     yq-go # yaml processor https://github.com/mikefarah/yq
     delta # A viewer for git and diff output
+    gping # ping, but with a graph(TUI)
+    websocat # Command-line client for WebSockets
+
+    # nix related
+    nix-index # A small utility to index nix store paths
+    nix-init # generate nix derivation from url
+    nix-melt # A TUI flake.lock viewer
+    nix-tree # A TUI to visualize the dependency graph of a nix derivation
   ];
 
   programs = {
     # A command-line fuzzy finder
     fzf = {
       enable = true;
+    };
+
+    # a cat(1) clone with syntax highlighting and Git integration.
+    bat = {
+      enable = true;
+      config = {
+        pager = "less -FR";
+      };
     };
 
     # zoxide is a smarter cd command, inspired by z and autojump.

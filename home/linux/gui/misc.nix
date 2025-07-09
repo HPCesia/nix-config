@@ -30,6 +30,7 @@ in {
     # Misc
     cherrystudio
     obs-studio
+    gimp3
   ];
 
   # allow fontconfig to discover fonts and configurations installed through home.packages
