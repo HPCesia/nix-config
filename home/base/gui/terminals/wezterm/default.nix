@@ -7,6 +7,8 @@
 in {
   home.file.".config/wezterm".source = config.lib.file.mkOutOfStoreSymlink configPath;
 
+  catppuccin.wezterm.enable = false;
+
   programs.wezterm = {
     enable = true;
     package = pkgs-unstable.wezterm;

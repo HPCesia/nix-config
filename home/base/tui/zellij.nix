@@ -3,8 +3,6 @@
     "zj" = "zellij";
   };
 in {
-  catppuccin.zellij.enable = true;
-
   programs.zellij = {
     enable = true;
     settings = {

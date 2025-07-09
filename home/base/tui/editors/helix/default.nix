@@ -1,8 +1,5 @@
 {...}: {
   imports = [./languages];
-
-  catppuccin.helix.enable = true;
-
   programs.helix = {
     settings = {
       editor = {

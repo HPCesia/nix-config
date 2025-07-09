@@ -28,8 +28,6 @@ in {
     mutableExtensionsDir = false;
   };
 
-  catppuccin.vscode.enable = true;
-
   # To solve VSCode wants to write settings.json
   # VSCode will reset per reboot/rebuild.
   systemd.user.services.vscode-setup = {

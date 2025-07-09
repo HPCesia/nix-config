@@ -3,8 +3,6 @@
     rimeDataPkgs = [pkgs.nur.repos.xyenon.rime-ice];
   };
 in {
-  catppuccin.fcitx5.enable = true;
-
   xdg.configFile = {
     "fcitx5/profile" = {
       source = ./profile;

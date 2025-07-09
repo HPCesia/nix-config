@@ -10,6 +10,4 @@
       show_banner = false;
     };
   };
-
-  catppuccin.nushell.enable = true;
 }

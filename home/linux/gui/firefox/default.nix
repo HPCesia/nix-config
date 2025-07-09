@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+  catppuccin.firefox.profiles.default.enable = false;
+
   programs.firefox = {
     enable = true;
     languagePacks = ["zh-CN" "en-US"];
@@ -39,6 +41,7 @@
         auto-tab-discard
         aria2-integration
         immersive-translate
+        firefox-color
       ];
       settings = {
         # No First Run
