@@ -1,8 +1,4 @@
-{nu-scripts, ...}: let
-  shellAliases = {
-    "zj" = "zellij";
-  };
-in {
+{nu-scripts, ...}: {
   programs.zellij = {
     enable = true;
     settings = {
@@ -31,8 +27,6 @@ in {
   #   }
   # '';
 
-  home.shellAliases = shellAliases; # only works in bash/zsh, not nushell
-  programs.nushell.shellAliases = shellAliases;
   programs.nushell.extraConfig = ''
     source ${nu-scripts}/custom-completions/zellij/zellij-completions.nu
   '';
