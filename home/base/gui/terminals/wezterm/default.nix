@@ -5,7 +5,7 @@
 }: let
   configPath = "${config.home.homeDirectory}/nix-config/home/base/gui/terminals/wezterm/config";
 in {
-  home.file.".config/wezterm".source = config.lib.file.mkOutOfStoreSymlink configPath;
+  xdg.configFile."wezterm".source = config.lib.file.mkOutOfStoreSymlink configPath;
 
   catppuccin.wezterm.enable = false;
 
