@@ -5,12 +5,12 @@
     enableNushellIntegration = true;
     plugins = {
       git = pkgs.yaziPlugins.git;
-      starship = pkgs.yaziPlugins.starship;
+      # starship = pkgs.yaziPlugins.starship;
       auto-layout = ./plugins/auto-layout.yazi;
     };
     initLua = ''
       require("git"):setup()
-      require("starship"):setup()
+      -- require("starship"):setup()
       require("auto-layout").setup()
     '';
     settings = {
