@@ -1,5 +1,6 @@
 {
   self,
+  colmena,
   nixpkgs,
   ...
 } @ inputs: let
@@ -64,6 +65,28 @@ in {
   nixosConfigurations = lib.attrsets.mergeAttrsList (
     map (it: it.nixosConfigurations or {}) nixosSystemValues
   );
+
+  # Colmena - remote deployment via SSH
+  colmenaHive = colmena.lib.makeHive self.outputs.colmena;
+  colmena =
+    {
+      meta =
+        (
+          let
+            system = "x86_64-linux";
+          in {
+            # colmena's default nixpkgs & specialArgs
+            nixpkgs = import nixpkgs {inherit system;};
+            specialArgs = genSpecialArgs system;
+          }
+        )
+        // {
+          # per-node nixpkgs & specialArgs
+          nodeNixpkgs = lib.attrsets.mergeAttrsList (map (it: it.colmenaMeta.nodeNixpkgs or {}) nixosSystemValues);
+          nodeSpecialArgs = lib.attrsets.mergeAttrsList (map (it: it.colmenaMeta.nodeSpecialArgs or {}) nixosSystemValues);
+        };
+    }
+    // lib.attrsets.mergeAttrsList (map (it: it.colmena or {}) nixosSystemValues);
 
   # macOS Hosts
   darwinConfigurations = lib.attrsets.mergeAttrsList (

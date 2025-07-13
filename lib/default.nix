@@ -1,4 +1,5 @@
 {lib, ...}: {
+  colmenaSystem = import ./colmenaSystem.nix;
   nixosSystem = import ./nixosSystem.nix;
 
   attrs = import ./attrs.nix {inherit lib;};
