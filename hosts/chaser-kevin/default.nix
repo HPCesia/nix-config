@@ -23,13 +23,11 @@ in {
     ./boot.nix
   ];
 
-  networking = {
-    inherit hostName;
-    inherit (myvars.networking) nameservers;
-
-    # desktop need its cli for status bar
-    networkmanager.enable = true;
-  };
+  networking =
+    {
+      inherit hostName;
+    }
+    // myvars.networking.generateHostNetworking hostName;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
