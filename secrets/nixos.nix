@@ -2,6 +2,7 @@
   imports = [
     sops-nix.nixosModules.sops
     ./base
+    ./nixos
   ];
 
   sops.age = {

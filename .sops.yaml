@@ -8,3 +8,9 @@ creation_rules:
           - *admin_hpcesia
         age:
           - *chaser_kevin
+  - path_regex: ^secrets/nixos/secrets\.yaml$
+    key_groups:
+      - pgp:
+          - *admin_hpcesia
+        age:
+          - *chaser_kevin
