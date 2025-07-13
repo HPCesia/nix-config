@@ -8,7 +8,6 @@
   environment.systemPackages = with pkgs; [
     fastfetch
     helix
-    micro
     nushell
     git
 
