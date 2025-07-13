@@ -22,5 +22,12 @@
   services = {
     gvfs.enable = true; # Mount, trash, and other functionalities
     tumbler.enable = true; # Thumbnail support for images
+    aria2 = {
+      rpcSecretFile = config.sops.secrets.aria2-rpc-secret.path;
+      settings = {
+        enable-rpc = true;
+        rpc-listen-port = 6800;
+      };
+    };
   };
 }
