@@ -28,5 +28,6 @@
   # root's ssh key are mainly used for remote deployment
   users.users.root = {
     inherit (myvars) initialHashedPassword;
+    openssh.authorizedKeys.keys = myvars.sshAuthorizedKeys;
   };
 }

@@ -13,23 +13,6 @@
     };
   };
 
-  networking.firewall = {
-    allowedTCPPortRanges = [
-      {
-        # KDE Connect
-        from = 1714;
-        to = 1764;
-      }
-    ];
-    allowedUDPPortRanges = [
-      {
-        # KDE Connect
-        from = 1714;
-        to = 1764;
-      }
-    ];
-  };
-
   # Use an NTP server located in the mainland of China to synchronize the system time
   networking.timeServers = [
     "ntp.aliyun.com" # Aliyun NTP Server
