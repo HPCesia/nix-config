@@ -14,9 +14,6 @@
   };
 
   networking.firewall = {
-    trustedInterfaces = [
-      "ElysianRealm"
-    ];
     allowedTCPPortRanges = [
       {
         # KDE Connect

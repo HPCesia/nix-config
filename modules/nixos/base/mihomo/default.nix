@@ -10,6 +10,10 @@
     configFile = config.sops.templates."mihomo-config.yaml".path;
   };
 
+  networking.firewall.trustedInterfaces = [
+    "ElysianRealm"
+  ];
+
   sops.templates."mihomo-config.yaml".content =
     ''
       NodeParam:
