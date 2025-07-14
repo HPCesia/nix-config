@@ -5,7 +5,7 @@
   ...
 }: {
   services.mihomo = {
-    enable = lib.mkDefault true;
+    enable = lib.mkDefault false;
     tunMode = true;
     webui = pkgs.metacubexd;
     configFile = config.sops.templates."mihomo-config.yaml".path;

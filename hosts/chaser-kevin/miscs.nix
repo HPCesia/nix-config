@@ -29,9 +29,10 @@
   # Touchpad
   services.libinput.enable = true;
 
-  # Network Manager
-  environment.systemPackages = with pkgs; [networkmanagerapplet];
-
   # √(3200² + 2000²) px / 16 in ≃ 235 dpi
   services.xserver.dpi = 235;
+
+  # Mihomo
+  services.mihomo.enable = true;
+  modules.secrets.mihomo.enable = true;
 }

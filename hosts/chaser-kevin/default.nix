@@ -23,11 +23,12 @@ in {
     ./boot.nix
   ];
 
-  networking =
-    {
-      inherit hostName;
-    }
-    // myvars.networking.generateHostNetworking hostName;
+  modules.my-hosts.${hostName}.network = {
+    enable = "networkmanager";
+    iface = "wlp0s20f3";
+    useDHCP = true;
+    nameservers = myvars.defaultNameservers;
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

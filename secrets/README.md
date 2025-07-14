@@ -18,7 +18,7 @@ nix-shell -p ssh-to-age --run 'cat /etc/ssh/ssh_host_ed25519_key.pub | ssh-to-ag
 Open the secret file in the terminal using sops:
 
 ```sh
-sops secrets/base/secrets.yaml
+sops secrets/secrets.yaml
 ```
 
 Then edit and add new secret fields:
@@ -28,7 +28,7 @@ this: "is a secret"
 and: { a: { nest: secret } }
 ```
 
-Next, edit and add the field in `/secrets/base/default.nix`:
+Next, edit and add the field in `/secrets/base.nix`:
 
 ```nix
 let

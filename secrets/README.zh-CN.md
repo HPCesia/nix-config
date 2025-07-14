@@ -18,7 +18,7 @@ nix-shell -p ssh-to-age --run 'cat /etc/ssh/ssh_host_ed25519_key.pub | ssh-to-ag
 在终端中使用 sops 打开机密所在的文件：
 
 ```sh
-sops secrets/base/secrets.yaml
+sops secrets/secrets.yaml
 ```
 
 并编辑添加新的机密字段：
@@ -28,7 +28,7 @@ this: "is a secret"
 and: { a: { nest: secret } }
 ```
 
-随后在 `/secrets/base/default.nix` 中编辑添加该字段
+随后在 `/secrets/base.nix` 中编辑添加该字段
 
 ```nix
 let
