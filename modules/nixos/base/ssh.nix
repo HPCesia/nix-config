@@ -16,6 +16,12 @@
       PasswordAuthentication = false; # disable password login
     };
     openFirewall = true;
+    hostKeys = [
+      {
+        path = "/etc/ssh/ssh_host_ed25519_key";
+        type = "ed25519";
+      }
+    ];
   };
 
   # Add terminfo database of all known terminals to the system profile.

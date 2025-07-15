@@ -5,7 +5,11 @@
   ...
 }: let
   hosts = config.modules.my-hosts;
-  sshTargetHosts = lib.filterAttrs (n: v: !builtins.isNull v.hostPublicKey) hosts;
+  sshTargetHosts =
+    lib.filterAttrs (
+      n: v: !builtins.isNull v.hostPublicKey && !builtins.isNull v.network.ipv4
+    )
+    hosts;
 in {
   programs.ssh = {
     extraConfig =
@@ -15,7 +19,7 @@ in {
         + ''
           Host ${host}
             HostName ${val.network.ipv4}
-            Port ${val.sshPort}
+            Port ${lib.elemAt val.sshPorts 0}
         '')
       ""
       sshTargetHosts;
