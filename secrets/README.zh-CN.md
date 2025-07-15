@@ -7,11 +7,13 @@
 
 ## 添加新主机
 
-首先
+获取主机的 host key，此处以本机的 `/etc/ssh/ssh_host_ed25519_key.pub` 为例。运行 `ssh-to-age` 获得 age 密钥。
 
 ```sh
 nix-shell -p ssh-to-age --run 'cat /etc/ssh/ssh_host_ed25519_key.pub | ssh-to-age'
 ```
+
+在 `.sops.yaml` 的顶层 `keys` 字段下添加生成的 age 密钥，并在 `creation_rules` 下需要的项目中的 `key_groups` 字段下引用即可。随后需要使用 `sops` 更新所有相关机密文件。
 
 ## 创建机密
 

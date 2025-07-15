@@ -7,11 +7,13 @@ All my secrets are managed using [sops][sops] and stored under this folder. Secr
 
 ## Adding a New Host
 
-First, run:
+Get the host's host key, here using the local machine's `/etc/ssh/ssh_host_ed25519_key.pub` as an example. Run `ssh-to-age` to obtain the age key.
 
 ```sh
 nix-shell -p ssh-to-age --run 'cat /etc/ssh/ssh_host_ed25519_key.pub | ssh-to-age'
 ```
+
+Add the generated age key under the top-level `keys` field in `.sops.yaml`, and reference it under the `key_groups` field in the required items under `creation_rules`. Then use `sops` to update all related secret files.
 
 ## Creating Secrets
 
