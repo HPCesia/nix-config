@@ -8,6 +8,7 @@
 
   users.groups = {
     "${myvars.username}" = {};
+    ssh-secrets-users = {};
   };
 
   users.users."${myvars.username}" = {
@@ -22,6 +23,7 @@
       "networkmanager"
       "wheel"
       "aria2"
+      "ssh-secrets-users"
     ];
   };
 

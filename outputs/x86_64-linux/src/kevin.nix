@@ -17,6 +17,7 @@
       # common
       "secrets/nixos.nix"
       "modules/nixos/desktop.nix"
+      "hosts/general.nix"
       # host specific
       "hosts/chaser-${name}"
     ];

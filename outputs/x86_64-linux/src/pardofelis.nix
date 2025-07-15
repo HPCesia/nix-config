@@ -20,6 +20,7 @@
       # common
       "secrets/nixos.nix"
       "modules/nixos/server/x86_64.nix"
+      "hosts/general.nix"
       # host specific
       "hosts/chaser-${name}"
     ];

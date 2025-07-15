@@ -10,26 +10,12 @@
 #  My main server hosted by Yecaoyun.
 #
 #############################################################
-let
-  hostName = "pardofelis"; # Define your hostname.
-in {
+{
   imports =
     (mylib.scanModules ./.)
     ++ [
       disko.nixosModules.default
     ];
-
-  modules.my-hosts.${hostName} = {
-    network = {
-      enable = "networkd";
-      iface = "eth0";
-      useDHCP = false;
-      nameservers = ["172.16.36.100"] ++ myvars.defaultNameservers;
-      search = ["local"];
-    };
-    hostPublicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO56HKTdzGulisPLhpfUmLQNEgwDqwD9SBLRb5aETffV root@pardofelis";
-    sshPorts = [23930];
-  };
 
   systemd.network.enable = true;
 

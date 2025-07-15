@@ -9,9 +9,7 @@
 #  My main computer, with I7-14650HX + RTX4060 Laptop GPU + 48GB memory, for daily use.
 #
 #############################################################
-let
-  hostName = "kevin"; # Define your hostname.
-in {
+{
   imports = [
     nixos-hardware.nixosModules.common-cpu-intel
     nixos-hardware.nixosModules.common-hidpi
@@ -22,13 +20,6 @@ in {
     ./miscs.nix
     ./boot.nix
   ];
-
-  modules.my-hosts.${hostName}.network = {
-    enable = "networkmanager";
-    iface = "wlp0s20f3";
-    useDHCP = true;
-    nameservers = myvars.defaultNameservers;
-  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

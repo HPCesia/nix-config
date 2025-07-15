@@ -1,5 +1,14 @@
 {lib, ...}:
 with lib; let
+  secretType = types.submodule {
+    options = {
+      secretName = mkOption {
+        type = types.str;
+      };
+    };
+  };
+  optSecretType = types.nullOr (types.either types.str secretType);
+
   hostModule = types.submodule {
     options = {
       network = mkOption {
@@ -41,11 +50,11 @@ with lib; let
         default = [];
       };
       ipv4 = mkOption {
-        type = types.nullOr types.str;
+        type = optSecretType;
         default = null;
       };
       ipv6 = mkOption {
-        type = types.nullOr types.str;
+        type = optSecretType;
         default = null;
       };
       prefixLength4 = mkOption {
@@ -57,11 +66,11 @@ with lib; let
         default = 64;
       };
       defaultGateway = mkOption {
-        type = types.nullOr types.str;
+        type = optSecretType;
         default = null;
       };
       defaultGateway6 = mkOption {
-        type = types.nullOr types.str;
+        type = optSecretType;
         default = null;
       };
     };
