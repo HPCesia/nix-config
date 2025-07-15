@@ -15,4 +15,5 @@ creation_rules:
       - pgp:
           - *admin_hpcesia
         age:
+          - *chaser_kevin
           - *chaser_pardofelis
