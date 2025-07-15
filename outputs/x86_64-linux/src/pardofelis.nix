@@ -29,12 +29,7 @@
     ];
   };
 
-  systemArgs =
-    modules
-    // args
-    // {
-      genSpecialArgs = system: (genSpecialArgs system) // {hostName = name;};
-    };
+  systemArgs = modules // args;
 in {
   nixosConfigurations.${name} = mylib.nixosSystem systemArgs;
 

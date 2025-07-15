@@ -10,14 +10,16 @@
 #  My main server hosted by Yecaoyun.
 #
 #############################################################
-{
+let
+  hostName = "pardofelis";
+in {
   imports =
     (mylib.scanModules ./.)
     ++ [
       disko.nixosModules.default
     ];
 
-  systemd.network.enable = true;
+  modules.currentHost = hostName;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

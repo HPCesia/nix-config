@@ -30,10 +30,6 @@
   };
 in {
   nixosConfigurations = {
-    "${name}" = mylib.nixosSystem (base-modules
-      // args
-      // {
-        genSpecialArgs = system: (genSpecialArgs system) // {hostName = name;};
-      });
+    "${name}" = mylib.nixosSystem (base-modules // args);
   };
 }

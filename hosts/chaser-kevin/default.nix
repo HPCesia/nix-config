@@ -9,7 +9,9 @@
 #  My main computer, with I7-14650HX + RTX4060 Laptop GPU + 48GB memory, for daily use.
 #
 #############################################################
-{
+let
+  hostName = "kevin";
+in {
   imports = [
     nixos-hardware.nixosModules.common-cpu-intel
     nixos-hardware.nixosModules.common-hidpi
@@ -20,6 +22,8 @@
     ./miscs.nix
     ./boot.nix
   ];
+
+  modules.currentHost = hostName;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

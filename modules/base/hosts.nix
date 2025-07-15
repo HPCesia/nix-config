@@ -81,4 +81,7 @@ in {
     description = "My nix hosts general configuration";
     default = {};
   };
+  options.modules.currentHost = mkOption {
+    type = types.str;
+  };
 }
