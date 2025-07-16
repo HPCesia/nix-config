@@ -19,6 +19,10 @@
         encode zstd gzip
         reverse_proxy http://localhost:${builtins.toString config.services.grafana.settings.server.http_port}
       '';
+      "prometheus.hpcesia.com".extraConfig = ''
+        encode zstd gzip
+        reverse_proxy http://${config.services.victoriametrics.listenAddress}
+      '';
     };
   };
 
