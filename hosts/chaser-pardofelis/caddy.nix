@@ -1,4 +1,8 @@
-{myvars, ...}: {
+{
+  myvars,
+  config,
+  ...
+}: {
   services.caddy = {
     enable = true;
     # Reload Caddy instead of restarting it when configuration file changes.
@@ -11,6 +15,10 @@
     '';
 
     virtualHosts = {
+      "grafana.hpcesia.com".extraConfig = ''
+        encode zstd gzip
+        reverse_proxy http://localhost:${builtins.toString config.services.grafana.settings.server.http_port}
+      '';
     };
   };
 
