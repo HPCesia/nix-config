@@ -28,5 +28,32 @@
         default_language = "detect";
       };
     };
+
+    provision = {
+      datasources.settings.datasources = [
+        {
+          name = "prometheus-pardofelis";
+          type = "prometheus";
+          access = "proxy";
+          url = "http://${config.services.victoriametrics.listenAddress}";
+          jsonData = {
+            httpMethod = "POST";
+            manageAlerts = true;
+            prometheusType = "Prometheus";
+            prometheusVersion = "2.49.0";
+            cacheLevel = "High";
+            disableRecordingRules = false;
+            incrementalQueryOverlapWindow = "10m";
+          };
+        }
+      ];
+      dashboards.settings.providers = [
+        {
+          name = "Default";
+          type = "file";
+          options.path = ./dashboards;
+        }
+      ];
+    };
   };
 }
