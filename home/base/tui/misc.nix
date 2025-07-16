@@ -1,9 +1,10 @@
 {
   pkgs,
   pkgs-unstable,
+  colmena,
   ...
 }: {
   home.packages = with pkgs; [
-    colmena # nixos's remote deployment tool
+    colmena.packages.${system}.colmena # nixos's remote deployment tool
   ];
 }
