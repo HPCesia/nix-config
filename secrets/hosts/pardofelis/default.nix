@@ -26,28 +26,71 @@ in
         lib.mkIf
         (config.modules.currentHost == "pardofelis")
         nvp.value;
-    }) [
-      {
-        name = "freshrss-admin-password";
-        value =
-          {
-            key = "services/freshrss/defaultUserPassword";
-            owner = "root";
-            group = "freshrss";
-            mode = "0440";
-          }
-          // secretFileConf;
-      }
-      {
-        name = "grafana-admin-password";
-        value =
-          {
-            key = "services/grafana/adminPassword";
-            owner = "root";
-            group = "grafana";
-            mode = "0440";
-          }
-          // secretFileConf;
-      }
-    ]
+    }) (
+      let
+        autheliaMainConf = {
+          owner = "root";
+          group = "authelia-main";
+          mode = "0440";
+        };
+      in [
+        {
+          name = "freshrss-admin-password";
+          value =
+            {
+              key = "services/freshrss/defaultUserPassword";
+              owner = "root";
+              group = "freshrss";
+              mode = "0440";
+            }
+            // secretFileConf;
+        }
+        {
+          name = "grafana-admin-password";
+          value =
+            {
+              key = "services/grafana/adminPassword";
+              owner = "root";
+              group = "grafana";
+              mode = "0440";
+            }
+            // secretFileConf;
+        }
+        {
+          name = "authelia-main-oidc-hmac-secret";
+          value =
+            {key = "services/authelia/main/oidcHmacSecret";}
+            // autheliaMainConf
+            // secretFileConf;
+        }
+        {
+          name = "authelia-main-oidc-issuer-private-key";
+          value =
+            {key = "services/authelia/main/oidcIssuerPrivateKey";}
+            // autheliaMainConf
+            // secretFileConf;
+        }
+        {
+          name = "authelia-main-session-secret";
+          value =
+            {key = "services/authelia/main/sessionSecret";}
+            // autheliaMainConf
+            // secretFileConf;
+        }
+        {
+          name = "authelia-main-jwt-secret";
+          value =
+            {key = "services/authelia/main/jwtSecret";}
+            // autheliaMainConf
+            // secretFileConf;
+        }
+        {
+          name = "authelia-main-storage-encryption-key";
+          value =
+            {key = "services/authelia/main/storageEncryptionKey";}
+            // autheliaMainConf
+            // secretFileConf;
+        }
+      ]
+    )
   )

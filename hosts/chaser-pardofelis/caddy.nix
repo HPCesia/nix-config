@@ -15,6 +15,13 @@
     '';
 
     virtualHosts = {
+      "authelia.hpcesia.com".extraConfig = ''
+        encode zstd gzip
+        reverse_proxy http://${
+          # Assuming address start with `tcp://`.
+          builtins.substring 6 (-1) config.services.authelia.instances.main.settings.server.address
+        }
+      '';
       "grafana.hpcesia.com".extraConfig = ''
         encode zstd gzip
         reverse_proxy http://localhost:${builtins.toString config.services.grafana.settings.server.http_port}
