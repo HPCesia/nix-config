@@ -57,6 +57,18 @@ in
             // secretFileConf;
         }
         {
+          name = "gotosocial-s3-endpoint";
+          value = {key = "services/gotosocial/s3Endpoint";} // secretFileConf;
+        }
+        {
+          name = "gotosocial-s3-access-key";
+          value = {key = "services/gotosocial/s3AccessKey";} // secretFileConf;
+        }
+        {
+          name = "gotosocial-s3-secret-key";
+          value = {key = "services/gotosocial/s3SecretKey";} // secretFileConf;
+        }
+        {
           name = "authelia-main-oidc-hmac-secret";
           value =
             {key = "services/authelia/main/oidcHmacSecret";}

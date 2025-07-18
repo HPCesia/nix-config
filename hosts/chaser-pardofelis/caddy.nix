@@ -21,6 +21,7 @@
           builtins.substring 6 (-1) config.services.authelia.instances.main.settings.server.address
         }";
         vaultwarden = "http://localhost:${builtins.toString config.services.vaultwarden.config.rocketPort}";
+        gotosocial = "http://localhost:${builtins.toString config.services.gotosocial.settings.port}";
         grafana = "http://localhost:${builtins.toString config.services.grafana.settings.server.http_port}";
         homepage = "http://localhost:${builtins.toString config.services.homepage-dashboard.listenPort}";
         prometheus = "http://${config.services.victoriametrics.listenAddress}";
@@ -49,6 +50,10 @@
       "prometheus.hpcesia.com".extraConfig = ''
         encode zstd gzip
         reverse_proxy ${localAddress.prometheus}
+      '';
+      "trin.one".extraConfig = ''
+        encode zstd gzip
+        reverse_proxy ${localAddress.gotosocial}
       '';
     };
   };
