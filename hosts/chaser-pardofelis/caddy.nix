@@ -20,6 +20,7 @@
           # Assuming address start with `tcp://`.
           builtins.substring 6 (-1) config.services.authelia.instances.main.settings.server.address
         }";
+        vaultwarden = "http://localhost:${builtins.toString config.services.vaultwarden.config.rocketPort}";
         grafana = "http://localhost:${builtins.toString config.services.grafana.settings.server.http_port}";
         homepage = "http://localhost:${builtins.toString config.services.homepage-dashboard.listenPort}";
         prometheus = "http://${config.services.victoriametrics.listenAddress}";
@@ -28,6 +29,10 @@
       "authelia.hpcesia.com".extraConfig = ''
         encode zstd gzip
         reverse_proxy ${localAddress.authelia}
+      '';
+      "bitwarden.hpcesia.com".extraConfig = ''
+        encode zstd gzip
+        reverse_proxy ${localAddress.vaultwarden}
       '';
       "grafana.hpcesia.com".extraConfig = ''
         encode zstd gzip
