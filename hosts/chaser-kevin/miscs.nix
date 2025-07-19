@@ -34,5 +34,4 @@
 
   # Mihomo
   services.mihomo.enable = true;
-  modules.secrets.mihomo.enable = true;
 }
