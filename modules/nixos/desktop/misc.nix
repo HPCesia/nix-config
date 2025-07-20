@@ -6,6 +6,7 @@
   # add user's shell into /etc/shells
   environment.shells = with pkgs; [
     bashInteractive
+    fish
     nushell
   ];
   # set user's default shell system-wide

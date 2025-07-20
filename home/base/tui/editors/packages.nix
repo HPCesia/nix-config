@@ -68,9 +68,4 @@
     stylelint-lsp
     nodePackages.prettier
   ];
-
-  programs.nushell.extraConfig = ''
-    mkdir ($nu.data-dir | path join "vendor/autoload")
-    tinymist completion nushell | save -f ($nu.data-dir | path join "vendor/autoload/tinymist.nu")
-  '';
 }

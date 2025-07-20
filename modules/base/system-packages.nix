@@ -8,6 +8,7 @@
     fastfetch
     helix
     nushell
+    fish
     git
 
     # archives

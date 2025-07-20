@@ -39,12 +39,14 @@
     zoxide = {
       enable = true;
       enableBashIntegration = true;
+      enableFishIntegration = true;
       enableNushellIntegration = true;
     };
 
     carapace = {
       enable = true;
       enableBashIntegration = true;
+      enableFishIntegration = true;
       enableNushellIntegration = true;
     };
 
@@ -54,7 +56,6 @@
       settings = {
         base_url = "https://bitwarden.hpcesia.com/";
         email = "me@hpcesia.com";
-        pinentry = pkgs.pinentry-qt;
       };
     };
 

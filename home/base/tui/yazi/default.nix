@@ -2,6 +2,7 @@
   programs.yazi = {
     enable = true;
     enableBashIntegration = true;
+    enableFishIntegration = true;
     enableNushellIntegration = true;
     plugins = {
       git = pkgs.yaziPlugins.git;

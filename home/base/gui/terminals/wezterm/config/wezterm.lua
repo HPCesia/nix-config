@@ -14,11 +14,11 @@ keybindings.apply(config)
 -- 关闭窗口时无提示
 config.window_close_confirmation = "NeverPrompt"
 
--- if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
---   config.default_prog = { 'pwsh' }
--- else
---   config.default_prog = { 'bash' }
--- end
-config.default_prog = { "nu" }
+if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+  config.default_prog = { 'pwsh' }
+else
+  config.default_prog = { 'fish' }
+end
+-- config.default_prog = { "nu" }
 
 return config
