@@ -28,6 +28,11 @@ in
         nvp.value;
     }) (
       let
+        artalkConf = {
+          owner = "root";
+          group = "artalk";
+          mode = "0440";
+        };
         autheliaMainConf = {
           owner = "root";
           group = "authelia-main";
@@ -106,6 +111,41 @@ in
         {
           name = "restic-backup-password";
           value = {key = "services/restic/password";} // secretFileConf;
+        }
+        {
+          name = "artalk-akismet-key";
+          value =
+            {key = "services/artalk/akismetKey";}
+            // artalkConf
+            // secretFileConf;
+        }
+        {
+          name = "artalk-app-key";
+          value =
+            {key = "services/artalk/appKey";}
+            // artalkConf
+            // secretFileConf;
+        }
+        {
+          name = "artalk-email-password";
+          value =
+            {key = "services/artalk/emailPassword";}
+            // artalkConf
+            // secretFileConf;
+        }
+        {
+          name = "artalk-github-client-id";
+          value =
+            {key = "services/artalk/githubClientId";}
+            // artalkConf
+            // secretFileConf;
+        }
+        {
+          name = "artalk-github-client-secret";
+          value =
+            {key = "services/artalk/githubClientSecret";}
+            // artalkConf
+            // secretFileConf;
         }
       ]
     )

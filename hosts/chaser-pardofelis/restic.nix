@@ -11,6 +11,7 @@
     paths =
       (lib.mapAttrsToList (n: v: "/var/lib/authelia-${n}") config.services.authelia.instances)
       ++ [
+        config.services.artalk.workdir
         "/var/lib/fail2ban"
         config.services.freshrss.dataDir
         "/var/lib/gotosocial"
