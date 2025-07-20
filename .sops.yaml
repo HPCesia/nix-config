@@ -1,5 +1,6 @@
 keys:
   - &admin_hpcesia 56AC2ED35E51AFE66EAAA569878BD0F02991BAAE
+  - &user_hpcesia age18778pjmwglmame3rjpq355chxue2vr97ysj70fdyygc24prwxqrsttf84g
   - &chaser_kevin age1sur93fevme8az4v6txee9uw7gk8xcpz2u0mfzvayavrcx9zkefxsmcpnln
   - &chaser_pardofelis age1l9acz0cuy455nprryeqyv6ckfqgv3tekuk0kxvvxyunsapwmpvnsmaazhy
 creation_rules:
@@ -8,6 +9,7 @@ creation_rules:
       - pgp:
           - *admin_hpcesia
         age:
+          - *user_hpcesia
           - *chaser_kevin
           - *chaser_pardofelis
   - path_regex: ^secrets/hosts/pardofelis/secrets\.yaml$
