@@ -103,6 +103,10 @@ in
             // autheliaMainConf
             // secretFileConf;
         }
+        {
+          name = "restic-backup-password";
+          value = {key = "services/restic/password";} // secretFileConf;
+        }
       ]
     )
   )

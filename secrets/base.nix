@@ -19,7 +19,7 @@
             key = "rclone/${k}";
             owner = myvars.username;
           };
-      }) ["onedrive-token"]
+      }) ["onedrive-token" "restic-backup-token"]
     );
 
   sops.age = {
