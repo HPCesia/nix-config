@@ -274,22 +274,6 @@
         "type": "github"
       }
     },
-    "nu-scripts": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1752876487,
-        "narHash": "sha256-YXLmTlyd4MFTNCZ7NeiI/4TlhTYJRqB7Y4avzg9A+hI=",
-        "owner": "nushell",
-        "repo": "nu_scripts",
-        "rev": "798a28e41897c964839216dbba4d6670bfde2484",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nushell",
-        "repo": "nu_scripts",
-        "type": "github"
-      }
-    },
     "nur": {
       "inputs": {
         "flake-parts": "flake-parts",
@@ -366,7 +350,6 @@
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-unstable": "nixpkgs-unstable",
-        "nu-scripts": "nu-scripts",
         "nur": "nur",
         "nur-hpcesia": "nur-hpcesia",
         "plasma-manager": "plasma-manager",

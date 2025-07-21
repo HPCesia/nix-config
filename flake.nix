@@ -48,11 +48,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nu-scripts = {
-      url = "github:nushell/nu_scripts";
-      flake = false;
-    };
-
     # === Follows are myself repos === #
     nur-hpcesia = {
       url = "github:HPCesia/nur-packages";
