@@ -41,6 +41,9 @@
     useDefaultShell = true;
     group = config.services.forgejo.group;
     home = config.services.forgejo.stateDir;
+    extraGroups = [
+      "ssh-secrets-users" # to use ssh-config
+    ];
   };
 
   networking.firewall.allowedTCPPorts = [
