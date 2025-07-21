@@ -27,6 +27,7 @@ in {
     openssh.authorizedKeys.keys = myvars.sshAuthorizedKeys;
   };
 
+  programs.mosh.enable = true; # Alternative of SSH for high latency connections
   programs.ssh.knownHosts =
     lib.mapAttrs'
     (name: host: lib.nameValuePair name {publicKey = host.hostPublicKey;})
