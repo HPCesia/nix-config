@@ -34,6 +34,7 @@
     tree
     which
     findutils
+    btop
   ];
 
   services.aria2 = {
