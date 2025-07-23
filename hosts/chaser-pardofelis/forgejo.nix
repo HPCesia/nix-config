@@ -49,4 +49,21 @@
   networking.firewall.allowedTCPPorts = [
     config.services.forgejo.settings.server.SSH_PORT
   ];
+
+  services.fail2ban.jails.forgejo-ssh = {
+    settings = {
+      filter = "forgejo-ssh";
+      action = "iptables-allports";
+      mode = "aggressive";
+      maxretry = 3;
+      findtime = 3600;
+      bantime = 900;
+    };
+  };
+
+  environment.etc."fail2ban/filter.d/forgejo-ssh.conf".text = ''
+    [Definition]
+    failregex = ^.*(Failed authentication attempt|invalid credentials|Attempted access of unknown user).* from <HOST>$
+    journalmatch = _SYSTEMD_UNIT=forgejo.service
+  '';
 }
