@@ -11,7 +11,7 @@
 | **桌面**       | [KDE Plasma 6][kde-plasma]                                          |
 | **终端模拟器** | [WezTerm][wezterm] + [Ghostty][ghostty]                             |
 | **终端复用器** | [Zellij][zellij]                                                    |
-| **Shell**      | [Nushell][nushell] + [Starship][starship]                           |
+| **Shell**      | [Fish][fish] + [Starship][starship]                                 |
 | **输入法**     | [Fcitx5][fcitx5] + [Rime][rime]                                     |
 | **配色主题**   | [Catppuccin Macchiato][catppuccin]                                  |
 | **文件管理**   | [Yazi][yazi] + [Dolphin][kde-dolphin]                               |
@@ -52,6 +52,7 @@ colmena apply
 [chromium]: https://chromium.googlesource.com/chromium/src
 [fcitx5]: https://github.com/fcitx/fcitx5
 [firefox]: https://github.com/mozilla-firefox/firefox
+[fish]: https://github.com/fish-shell/fish-shell
 [ghostty]: https://github.com/ghostty-org/ghostty
 [nushell]: https://github.com/nushell/nushell
 [helix]: https://github.com/helix-editor/helix

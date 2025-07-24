@@ -11,7 +11,7 @@ My Nix configuration for a NixOS laptop and a NixOS VPS.
 | **Desktop**                 | [KDE Plasma 6][kde-plasma]                                   |
 | **Terminal Emulator**       | [WezTerm][wezterm] + [Ghostty][ghostty]                      |
 | **Terminal Multiplexer**    | [Zellij][zellij]                                             |
-| **Shell**                   | [Nushell][nushell] + [Starship][starship]                    |
+| **Shell**                   | [Fish][fish] + [Starship][starship]                          |
 | **Input Method**            | [Fcitx5][fcitx5] + [Rime][rime]                              |
 | **Color Theme**             | [Catppuccin Macchiato][catppuccin]                           |
 | **File Manager**            | [Yazi][yazi] + [Dolphin][kde-dolphin]                        |
@@ -52,6 +52,7 @@ colmena apply
 [chromium]: https://chromium.googlesource.com/chromium/src
 [fcitx5]: https://github.com/fcitx/fcitx5
 [firefox]: https://github.com/mozilla-firefox/firefox
+[fish]: https://github.com/fish-shell/fish-shell
 [ghostty]: https://github.com/ghostty-org/ghostty
 [nushell]: https://github.com/nushell/nushell
 [helix]: https://github.com/helix-editor/helix
