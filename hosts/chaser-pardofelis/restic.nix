@@ -14,6 +14,7 @@
         config.services.artalk.workdir
         "/var/lib/fail2ban"
         config.services.freshrss.dataDir
+        "/var/lib/goatcounter"
         "/var/lib/gotosocial"
         config.services.grafana.dataDir
         "/var/lib/${config.services.victoriametrics.stateDir}"

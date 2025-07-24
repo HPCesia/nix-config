@@ -22,6 +22,7 @@
           builtins.substring 6 (-1) config.services.authelia.instances.main.settings.server.address
         }";
         forgejo = "http://localhost:${builtins.toString config.services.forgejo.settings.server.HTTP_PORT}";
+        goatcounter = "http://localhost:${builtins.toString config.services.goatcounter.port}";
         gotosocial = "http://localhost:${builtins.toString config.services.gotosocial.settings.port}";
         grafana = "http://localhost:${builtins.toString config.services.grafana.settings.server.http_port}";
         homepage = "http://localhost:${builtins.toString config.services.homepage-dashboard.listenPort}";
@@ -40,6 +41,10 @@
       "bitwarden.hpcesia.com".extraConfig = ''
         encode zstd gzip
         reverse_proxy ${localAddress.vaultwarden}
+      '';
+      "goatcounter.hpcesia.com".extraConfig = ''
+        encode zstd gzip
+        reverse_proxy ${localAddress.goatcounter}
       '';
       "grafana.hpcesia.com".extraConfig = ''
         encode zstd gzip

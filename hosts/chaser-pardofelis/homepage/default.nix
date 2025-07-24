@@ -112,6 +112,10 @@ in {
         href = "https://squoosh.app/";
         icon = "sh-squoosh.svg";
       };
+      GoatCounter = {
+        href = "https://goatcounter.hpcesia.com/";
+        icon = "sh-goatcounter.svg";
+      };
     };
     "阅读" = mapHomepageConf {
       FreshRSS = {
