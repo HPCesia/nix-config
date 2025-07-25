@@ -5,6 +5,11 @@
   ...
 }: {
   home.packages = with pkgs; [
+    # Database
+    pkgs-unstable.mycli
+    pkgs-unstable.pgcli
+    sqlite
+
     colmena.packages.${system}.colmena # nixos's remote deployment tool
   ];
 
