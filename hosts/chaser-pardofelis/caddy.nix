@@ -17,6 +17,7 @@
     virtualHosts = let
       localAddress = {
         artalk = "http://localhost:${builtins.toString config.services.artalk.settings.port}";
+        atuin = "http://localhost:${builtins.toString config.services.atuin.port}";
         authelia = "http://${
           # Assuming address start with `tcp://`.
           builtins.substring 6 (-1) config.services.authelia.instances.main.settings.server.address
@@ -33,6 +34,10 @@
       "artalk.hpcesia.com".extraConfig = ''
         encode zstd gzip
         reverse_proxy ${localAddress.artalk}
+      '';
+      "atuin.hpcesia.com".extraConfig = ''
+        encode zstd gzip
+        reverse_proxy ${localAddress.atuin}
       '';
       "authelia.hpcesia.com".extraConfig = ''
         encode zstd gzip

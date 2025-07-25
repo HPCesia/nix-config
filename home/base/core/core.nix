@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  pkgs-unstable,
+  ...
+}: {
   home.packages = with pkgs; [
     # Misc
     gnupg
@@ -84,6 +88,15 @@
       enableBashIntegration = true;
       enableFishIntegration = true;
       enableNushellIntegration = true;
+      package = pkgs-unstable.atuin;
+      settings = {
+        sync_address = "https://atuin.hpcesia.com";
+        sync_frequency = "10m";
+        filter_mode = "host";
+        style = "full";
+        inline_height = 32;
+        keymap_mode = "vim-normal";
+      };
     };
   };
 }
