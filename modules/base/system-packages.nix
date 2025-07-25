@@ -8,7 +8,6 @@
     fastfetch
     helix
     nushell
-    fish
     git
 
     # archives
@@ -36,6 +35,8 @@
     findutils
     btop
   ];
+
+  programs.fish.enable = true;
 
   services.aria2 = {
     enable = true;
