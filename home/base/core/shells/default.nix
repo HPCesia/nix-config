@@ -10,6 +10,16 @@
 
   programs.fish = {
     enable = true;
+    plugins = with pkgs.fishPlugins; [
+      {
+        inherit (puffer) src;
+        name = "puffer";
+      }
+      {
+        inherit (autopair) src;
+        name = "autopair";
+      }
+    ];
   };
 
   programs.nushell = {
