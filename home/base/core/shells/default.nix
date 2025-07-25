@@ -1,4 +1,8 @@
-{...}: {
+{
+  pkgs,
+  programsdb,
+  ...
+}: {
   programs.bash = {
     enable = true;
     enableCompletion = true;
@@ -13,5 +17,10 @@
     settings = {
       show_banner = false;
     };
+  };
+
+  home.file.".nix-defexpr/channels/nixpkgs/programs.sqlite" = {
+    source = programsdb.packages.${pkgs.system}.programs-sqlite;
+    force = true;
   };
 }

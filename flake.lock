@@ -338,6 +338,27 @@
         "type": "github"
       }
     },
+    "programsdb": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "utils": "utils"
+      },
+      "locked": {
+        "lastModified": 1753433875,
+        "narHash": "sha256-kwrggwH9zeiLVonO9aA2Wngl/ZAL/1VbJxbBKgyfbXo=",
+        "owner": "wamserma",
+        "repo": "flake-programs-sqlite",
+        "rev": "79677d017c844fec0511558ee4f96291c85a946e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "wamserma",
+        "repo": "flake-programs-sqlite",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "catppuccin": "catppuccin",
@@ -353,6 +374,7 @@
         "nur": "nur",
         "nur-hpcesia": "nur-hpcesia",
         "plasma-manager": "plasma-manager",
+        "programsdb": "programsdb",
         "sops-nix": "sops-nix",
         "wallpapers": "wallpapers"
       }
@@ -390,6 +412,21 @@
         "owner": "NixOS",
         "ref": "nixos-25.05",
         "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "utils": {
+      "locked": {
+        "lastModified": 1678901627,
+        "narHash": "sha256-U02riOqrKKzwjsxc/400XnElV+UtPUQWpANPlyazjH0=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "93a2b84fc4b70d9e089d029deacc3583435c2ed6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
         "type": "github"
       }
     },

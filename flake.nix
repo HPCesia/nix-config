@@ -48,6 +48,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    programsdb = {
+      url = "github:wamserma/flake-programs-sqlite";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # === Follows are myself repos === #
     nur-hpcesia = {
       url = "github:HPCesia/nur-packages";

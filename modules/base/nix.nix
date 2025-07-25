@@ -1,6 +1,8 @@
 {
+  pkgs,
   config,
   myvars,
+  programsdb,
   ...
 }: {
   nix.settings = {
@@ -31,4 +33,7 @@
     '';
     mode = "0444"; # file must be accessible (r) to all users, because only the build daemon runs as root and not nix evaluator itself.
   };
+
+  environment.etc."programs.sqlite".source = programsdb.packages.${pkgs.system}.programs-sqlite;
+  programs.command-not-found.dbPath = "/etc/programs.sqlite";
 }
