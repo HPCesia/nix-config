@@ -3,4 +3,6 @@
     geogebra
     wireshark # network analyzer
   ];
+
+  programs.rbw.settings.pinentry = pkgs.pinentry-qt;
 }

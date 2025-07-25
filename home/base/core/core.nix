@@ -1,6 +1,7 @@
 {
   pkgs,
   pkgs-unstable,
+  lib,
   ...
 }: {
   home.packages = with pkgs; [
@@ -60,6 +61,7 @@
       settings = {
         base_url = "https://bitwarden.hpcesia.com/";
         email = "me@hpcesia.com";
+        pinentry = lib.mkDefault pkgs.pinentry-tty;
       };
     };
 
