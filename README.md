@@ -43,6 +43,7 @@ colmena apply
 - Nix Flakes
   - [ryan4yin/nix-config](https://github.com/ryan4yin/nix-config): The foundational architecture of this configuration originates from here.
   - [kamadorueda/machine](https://github.com/kamadorueda/machine): Resolves the issue with writing to VSCode's `settings.json`.
+  - [xddxdd/nixos-config](https://github.com/xddxdd/nixos-config): Resolves the compatibility issue between Audacious and Fcitx5.
 - Dotfiles
   - [yyhhyyyyyy/selfproxy](https://github.com/yyhhyyyyyy/selfproxy): Referenced configurations for [mihomo][mihomo].
 

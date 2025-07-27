@@ -43,6 +43,7 @@ colmena apply
 - Nix Flakes
   - [ryan4yin/nix-config](https://github.com/ryan4yin/nix-config): 本配置的基础架构源自此配置。
   - [kamadorueda/machine](https://github.com/kamadorueda/machine): 解决 VSCode 的 `settings.json` 写入问题。
+  - [xddxdd/nixos-config](https://github.com/xddxdd/nixos-config): 解决 Audacious 与 Fcitx5 的配合问题。
 - Dotfiles
   - [yyhhyyyyyy/selfproxy](https://github.com/yyhhyyyyyy/selfproxy): 参考了 [mihomo][mihomo] 的相关配置。
 
