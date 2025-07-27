@@ -4,6 +4,9 @@
   programs.firefox = {
     enable = true;
     languagePacks = ["zh-CN" "en-US"];
+    nativeMessagingHosts = with pkgs; [
+      kdePackages.plasma-browser-integration
+    ];
 
     policies = {
       DisableAppUpdate = true;
@@ -42,6 +45,7 @@
         aria2-integration
         immersive-translate
         firefox-color
+        plasma-integration
       ];
       settings = {
         # No First Run
