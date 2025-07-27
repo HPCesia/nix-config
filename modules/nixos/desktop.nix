@@ -33,5 +33,6 @@
     konsole
     kdepim-runtime
     kate
+    elisa
   ];
 }
