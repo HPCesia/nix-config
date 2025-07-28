@@ -46,6 +46,7 @@
         immersive-translate
         firefox-color
         plasma-integration
+        aw-watcher-web
       ];
       settings = {
         # No First Run
