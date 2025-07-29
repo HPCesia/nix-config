@@ -31,6 +31,7 @@ in {
     cherrystudio
     obs-studio
     gimp3
+    pot
   ];
 
   # allow fontconfig to discover fonts and configurations installed through home.packages
