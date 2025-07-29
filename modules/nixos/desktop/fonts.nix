@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   fonts = {
     enableDefaultPackages = false;
     fontDir.enable = true;
@@ -47,7 +51,7 @@
       }
     ];
     extraOptions = "--term xterm-256color";
-    extraConfig = "font-size=12";
+    extraConfig = lib.mkDefault "font-size=12";
     # Whether to use 3D hardware acceleration to render the console.
     hwRender = true;
   };

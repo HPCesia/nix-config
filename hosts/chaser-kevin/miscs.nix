@@ -32,6 +32,8 @@
   # √(3200² + 2000²) px / 16 in ≃ 235 dpi
   services.xserver.dpi = 235;
 
+  services.kmscon.extraConfig = "font-size=22";
+
   # Mihomo
   services.mihomo.enable = true;
 }
