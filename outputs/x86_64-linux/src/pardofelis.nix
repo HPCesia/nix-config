@@ -20,12 +20,14 @@
       # common
       "secrets/nixos.nix"
       "modules/nixos/server/x86_64.nix"
+      "options/nixos/default.nix"
       "hosts/general.nix"
       # host specific
       "hosts/chaser-${name}"
     ];
     home-modules = map mylib.relativeToRoot [
       "home/linux/core.nix"
+      "options/home/default.nix"
     ];
   };
 
