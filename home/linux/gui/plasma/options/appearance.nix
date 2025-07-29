@@ -12,7 +12,6 @@
 in {
   home.packages = with pkgs; [
     catppuccin-kde
-    kde-rounded-corners
   ];
 
   programs.plasma = {
@@ -49,15 +48,6 @@ in {
     configFile.dolphinrc.IconsMode = {
       IconSize = 128;
       PreviewSize = 128;
-    };
-
-    configFile.kwinrc = {
-      Plugins.kwin4_effect_shapecornersEnabled = true;
-      Round-Corners = lib.mkMerge (lib.map (n: {
-        "${n}UseCustom" = false;
-        "${n}UsePalette" = true;
-        "${n}Palette" = 3;
-      }) ["ActiveOutline" "ActiveOutline" "InactiveOutline" "InactiveSecondOutline"]);
     };
   };
 }
