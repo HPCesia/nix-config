@@ -52,6 +52,12 @@
       url = "github:wamserma/flake-programs-sqlite";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    helix-steel = {
+      url = "github:mattwparas/helix/steel-event-system";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # === Follows are myself repos === #
     nur-hpcesia = {
       url = "github:HPCesia/nur-packages";

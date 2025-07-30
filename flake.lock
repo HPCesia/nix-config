@@ -136,6 +136,28 @@
         "type": "github"
       }
     },
+    "helix-steel": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1753848867,
+        "narHash": "sha256-AkZoumnw7+mgNQLyvbfgDN9S1sU4SEM+PdDgbflXOks=",
+        "owner": "mattwparas",
+        "repo": "helix",
+        "rev": "d0c49393072979a45eacbf765594a9ad03ecefb1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mattwparas",
+        "ref": "steel-event-system",
+        "repo": "helix",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -365,6 +387,7 @@
         "colmena": "colmena",
         "disko": "disko",
         "haumea": "haumea",
+        "helix-steel": "helix-steel",
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
         "nixos-logo": "nixos-logo",
@@ -377,6 +400,27 @@
         "programsdb": "programsdb",
         "sops-nix": "sops-nix",
         "wallpapers": "wallpapers"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "helix-steel",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1740623427,
+        "narHash": "sha256-3SdPQrZoa4odlScFDUHd4CUPQ/R1gtH4Mq9u8CBiK8M=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "d342e8b5fd88421ff982f383c853f0fc78a847ab",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
       }
     },
     "sops-nix": {

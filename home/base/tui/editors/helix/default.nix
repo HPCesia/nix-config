@@ -1,5 +1,6 @@
 {...}: {
-  imports = [./languages];
+  imports = [./languages ./steel-config];
+
   programs.helix = {
     settings = {
       editor = {
