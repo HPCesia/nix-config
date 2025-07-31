@@ -62,6 +62,11 @@ in
             // secretFileConf;
         }
         {
+          name = "restic-backup-password";
+          value = {key = "services/restic/password";} // secretFileConf;
+        }
+        # === GoToSocial === #
+        {
           name = "gotosocial-s3-endpoint";
           value = {key = "services/gotosocial/s3Endpoint";} // secretFileConf;
         }
@@ -73,6 +78,7 @@ in
           name = "gotosocial-s3-secret-key";
           value = {key = "services/gotosocial/s3SecretKey";} // secretFileConf;
         }
+        # === Authelia === #
         {
           name = "authelia-main-oidc-hmac-secret";
           value =
@@ -109,9 +115,13 @@ in
             // secretFileConf;
         }
         {
-          name = "restic-backup-password";
-          value = {key = "services/restic/password";} // secretFileConf;
+          name = "authelia-main-client-secrets-forgejo";
+          value =
+            {key = "services/authelia/main/clientSecrets/forgejo";}
+            // autheliaMainConf
+            // secretFileConf;
         }
+        # === Artalk === #
         {
           name = "artalk-akismet-key";
           value =

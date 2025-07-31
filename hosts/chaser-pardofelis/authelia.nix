@@ -24,22 +24,23 @@
         identity_validation.reset_password.jwt_algorithm = "HS512";
         identity_providers.oidc.clients = [
           {
-            # TODO: Just a placeholder to run Authelia correctly,
-            # Because `identity_providers.oidc.clients` should note be empty.
-            client_id = "alist_example";
-            client_name = "Alist";
-            # The digest of 'insecure_secret'.
-            # In real deployment, it should be a secret managed by sops-nix.
-            client_secret = "$pbkdf2-sha512$310000$c8p78n7pUMln0jzvd4aK4Q$JNRBzwAo0ek5qKn50cFzzvE9RXV88h1wJn5KGiHrD0YKtZaR/nCb2CJPOsKaPK0hjf.9yHxzQGZziziccp6Yng";
+            # Refer: https://www.authelia.com/integration/openid-connect/clients/forgejo
+            client_id = "forgejo";
+            client_name = "Forgejo";
+            client_secret = ''{{ secret "${config.sops.secrets."authelia-main-client-secrets-forgejo".path}" }}'';
             public = false;
-            authorization_policy = "one_factor";
+            authorization_policy = "two_factor";
+            require_pkce = true;
+            pkce_challenge_method = "S256";
             redirect_uris = [
-              "https://alist.example.com/api/auth/sso_callback?method=sso_get_token"
-              "https://alist.example.com/api/auth/sso_callback?method=get_sso_id"
+              "https://repo.hpcesia.com/user/oauth2/Authelia/callback"
             ];
-            scopes = ["openid" "profile"];
+            scopes = ["openid" "email" "profile" "groups"];
+            response_types = ["code"];
+            grant_types = ["authorization_code"];
+            access_token_signed_response_alg = "none";
             userinfo_signed_response_alg = "none";
-            token_endpoint_auth_method = "client_secret_post";
+            token_endpoint_auth_method = "client_secret_basic";
           }
         ];
         authentication_backend.file = {
