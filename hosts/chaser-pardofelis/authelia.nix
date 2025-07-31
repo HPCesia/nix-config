@@ -22,6 +22,10 @@
           };
         };
         identity_validation.reset_password.jwt_algorithm = "HS512";
+        identity_providers.oidc.cors = {
+          endpoints = ["authorization" "token" "revocation" "introspection"];
+          allowed_origins = ["https://*.hpcesia.com" "https://*.trin.one"];
+        };
         identity_providers.oidc.clients = [
           {
             # Refer: https://www.authelia.com/integration/openid-connect/clients/forgejo
@@ -41,6 +45,19 @@
             access_token_signed_response_alg = "none";
             userinfo_signed_response_alg = "none";
             token_endpoint_auth_method = "client_secret_basic";
+          }
+          {
+            # Refer: https://www.authelia.com/integration/openid-connect/clients/forgejo
+            client_id = "gokapi";
+            client_name = "Tribios";
+            client_secret = ''{{ secret "${config.sops.secrets."authelia-main-client-secrets-gokapi".path}" }}'';
+            public = false;
+            authorization_policy = "one_factor";
+            redirect_uris = [
+              "https://send.hpcesia.com/oauth-callback"
+            ];
+            scopes = ["openid" "email" "profile" "groups"];
+            userinfo_signed_response_alg = "none";
           }
         ];
         authentication_backend.file = {

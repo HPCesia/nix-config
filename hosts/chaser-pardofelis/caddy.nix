@@ -24,6 +24,7 @@
         }";
         forgejo = "http://localhost:${builtins.toString config.services.forgejo.settings.server.HTTP_PORT}";
         goatcounter = "http://localhost:${builtins.toString config.services.goatcounter.port}";
+        gokapi = "http://localhost:${builtins.toString config.services.gokapi.environment.GOKAPI_PORT}";
         gotosocial = "http://localhost:${builtins.toString config.services.gotosocial.settings.port}";
         grafana = "http://localhost:${builtins.toString config.services.grafana.settings.server.http_port}";
         homepage = "http://localhost:${builtins.toString config.services.homepage-dashboard.listenPort}";
@@ -70,6 +71,10 @@
       "repo.hpcesia.com".extraConfig = ''
         encode zstd gzip
         reverse_proxy ${localAddress.forgejo}
+      '';
+      "send.hpcesia.com".extraConfig = ''
+        encode zstd gzip
+        reverse_proxy ${localAddress.gokapi}
       '';
       "trin.one".extraConfig = ''
         encode zstd gzip

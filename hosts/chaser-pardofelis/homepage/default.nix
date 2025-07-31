@@ -99,10 +99,10 @@ in {
       };
     };
     "工具" = mapHomepageConf {
-      Vaultwarden = {
-        href = "https://bitwarden.hpcesia.com/";
-        icon = "vaultwarden.svg";
-        siteMonitor = "https://bitwarden.hpcesia.com/";
+      Gokapi = {
+        href = "https://send.hpcesia.com/admin";
+        icon = "sh-gokapi.png";
+        siteMonitor = "https://send.hpcesia.com/";
       };
       Hoppscotch = {
         href = "https://hoppscotch.io/";

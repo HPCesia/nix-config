@@ -121,6 +121,13 @@ in
             // autheliaMainConf
             // secretFileConf;
         }
+        {
+          name = "authelia-main-client-secrets-gokapi";
+          value =
+            {key = "services/authelia/main/clientSecrets/gokapi";}
+            // autheliaMainConf
+            // secretFileConf;
+        }
         # === Artalk === #
         {
           name = "artalk-akismet-key";
@@ -156,6 +163,19 @@ in
             {key = "services/artalk/githubClientSecret";}
             // artalkConf
             // secretFileConf;
+        }
+        # === Gokapi === #
+        {
+          name = "gokapi-salt-admin";
+          value = {key = "services/gokapi/saltAdmin";} // secretFileConf;
+        }
+        {
+          name = "gokapi-salt-files";
+          value = {key = "services/gokapi/saltFiles";} // secretFileConf;
+        }
+        {
+          name = "gokapi-oauth-secret";
+          value = {key = "services/gokapi/oauthSecret";} // secretFileConf;
         }
       ]
     )
