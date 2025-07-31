@@ -1,7 +1,5 @@
-{pkgs, ...}: let
-  baseExtensions = import ../baseExtensions.nix pkgs;
-in {
-  programs.vscode.profiles."C++" = {
+{pkgs, ...}: {
+  "C++" = {
     userSettings = {
       "clangd.arguments" = [
         "--compile-commands-dir=\${workspaceFolder}/.vscode"
@@ -33,7 +31,6 @@ in {
             sha256 = "rxx/tG0WqSQoP1nfuknPewDkmEkNBkFBaC2ZrWwTLpg=";
           }
         ]
-      )
-      ++ baseExtensions;
+      );
   };
 }

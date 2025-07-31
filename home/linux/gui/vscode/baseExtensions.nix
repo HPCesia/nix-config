@@ -1,7 +1,12 @@
-pkgs: (with pkgs.vscode-extensions;
+{
+  pkgs,
+  pkgs-unstable,
+  ...
+}:
+with pkgs.vscode-extensions;
   [
     # Translation
-    # ms-ceintl.vscode-language-pack-zh-hans
+    ms-ceintl.vscode-language-pack-zh-hans
     w88975.code-translate
 
     # Appearance
@@ -29,7 +34,7 @@ pkgs: (with pkgs.vscode-extensions;
     tamasfe.even-better-toml
     redhat.vscode-yaml
   ]
-  ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+  ++ (pkgs.vscode-utils.extensionsFromVscodeMarketplace [
     {
       name = "git-commit-plugin";
       publisher = "redjue";

@@ -1,15 +1,11 @@
-{pkgs, ...}: let
-  baseExtensions = import ../baseExtensions.nix pkgs;
-in {
-  programs.vscode.profiles.Rust = {
+{pkgs, ...}: {
+  Rust = {
     userSettings = {
     };
 
-    extensions =
-      (with pkgs.vscode-extensions; [
-        rust-lang.rust-analyzer
-        vadimcn.vscode-lldb
-      ])
-      ++ baseExtensions;
+    extensions = with pkgs.vscode-extensions; [
+      rust-lang.rust-analyzer
+      vadimcn.vscode-lldb
+    ];
   };
 }
