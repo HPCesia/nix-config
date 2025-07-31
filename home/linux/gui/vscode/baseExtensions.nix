@@ -22,7 +22,7 @@ with pkgs.vscode-extensions;
 
     # LLM
     github.copilot
-    github.copilot-chat
+    pkgs-unstable.vscode-extensions.github.copilot-chat
 
     # Nix
     jnoortheen.nix-ide

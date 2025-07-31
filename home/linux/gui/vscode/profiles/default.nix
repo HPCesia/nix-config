@@ -73,7 +73,7 @@
   profiles = lib.mergeAttrsList profilesList;
   profilesWithBaseExtensions =
     lib.mapAttrs
-    (_: v: (v // {extensions = v.extensions ++ baseExtensions;}))
+    (_: v: (v // {extensions = v.extensions or [] ++ baseExtensions;}))
     profiles;
 in {
   catppuccin.vscode.profiles.default.icons.enable = false;

@@ -14,6 +14,7 @@
     commandLineArgs = concatLists [
       ["--extensions-dir" extensionsDir]
       ["--user-data-dir" userDataDir]
+      ["--locale" "zh-cn"]
       ["--ozone-platform-hint=auto"]
       ["--enable-wayland-ime"]
       ["--wayland-text-input-version=3"]
