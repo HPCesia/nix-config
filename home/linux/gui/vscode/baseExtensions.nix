@@ -47,4 +47,10 @@ with pkgs.vscode-extensions;
       version = "0.5.0";
       sha256 = "OrdIhgNXpEbLXYVJAx/jpt2c6Qa5jf8FNxqrbu5FfFs=";
     }
+    {
+      name = "jjk";
+      publisher = "jjk";
+      version = "0.8.1";
+      sha256 = "2JUn6wkWgZKZzhitQy6v9R/rCNLrt7DBtt59707hp6c=";
+    }
   ])

@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  pkgs-unstable,
   myvars,
   ...
 }: {
@@ -48,6 +49,22 @@
         line-numbers = true;
         true-color = "always";
       };
+    };
+  };
+
+  programs.jujutsu = {
+    enable = true;
+    package = pkgs-unstable.jujutsu;
+    settings = {
+      user = {
+        name = myvars.userfullname;
+        email = myvars.useremail;
+      };
+      ui = {
+        editor = "hx";
+        diff-formatter = "delta";
+      };
+      merge-tools.delta.diff-expected-exit-codes = [0 1];
     };
   };
 }
