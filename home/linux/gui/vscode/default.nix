@@ -7,8 +7,9 @@
   inherit (lib.lists) concatLists;
 
   homeDir = config.home.homeDirectory;
-  userDataDir = "${homeDir}/.data/vscode/data";
-  extensionsDir = "${homeDir}/.data/vscode/extensions";
+  dataDir = config.xdg.dataHome;
+  userDataDir = "${dataDir}/vscode/data";
+  extensionsDir = "${dataDir}/vscode/extensions";
 
   pkg = pkgs.vscode.override {
     commandLineArgs = concatLists [
