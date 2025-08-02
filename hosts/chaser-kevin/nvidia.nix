@@ -13,11 +13,13 @@ in {
   services.xserver.videoDrivers = ["nvidia"]; # will install nvidia-vaapi-driver by default
   boot.initrd.kernelModules = ["nvidia"];
   boot.extraModulePackages = [config.boot.kernelPackages.nvidia_x11];
+  boot.kernelParams = ["nvidia-drm.modeset=1"];
 
   # Nvidia ada lovelace
   hardware.nvidia = {
     modesetting.enable = true;
-    powerManagement.enable = lib.mkDefault true;
+    powerManagement.enable = true;
+    powerManagement.finegrained = true;
     prime = {
       intelBusId = "PCI:00:02:0";
       nvidiaBusId = "PCI:01:00:0";
@@ -32,7 +34,5 @@ in {
     enable32Bit = true;
   };
 
-  # disable cudasupport before this issue get fixed:
-  # https://github.com/NixOS/nixpkgs/issues/338315
-  nixpkgs.config.cudaSupport = false;
+  nixpkgs.config.cudaSupport = true;
 }
