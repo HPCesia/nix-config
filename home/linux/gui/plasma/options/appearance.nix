@@ -21,6 +21,7 @@ in {
       wallpaper = "${wallpapers}/default_wallpaper";
       theme = "breeze-dark";
       colorScheme = "CatppuccinMacchiatoMauve";
+      iconTheme = "breeze-dark";
     };
 
     panels = [
