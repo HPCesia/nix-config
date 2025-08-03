@@ -23,7 +23,7 @@ in {
     # Message
     telegram-desktop
     qq
-    wechat-uos
+    wechat
 
     # Misc
     cherrystudio
