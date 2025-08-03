@@ -20,8 +20,6 @@
   qq = pkgs.qq.override chromiumCLA;
 in {
   home.packages = with pkgs; [
-    chromium
-
     # Message
     telegram-desktop
     qq
@@ -33,6 +31,16 @@ in {
     gimp3
     pot
   ];
+
+  programs.chromium = {
+    enable = true;
+    package = chromium;
+    nativeMessagingHosts = [pkgs.kdePackages.plasma-browser-integration];
+    extensions = [
+      {id = "cimiefiiaegbelhefglklhhakcgmhkai";} # Plasma Integration
+      # {id = "bpoadfkcbjbfhfodiogcnhhhpibjhbnh";} # Immersive Translate
+    ];
+  };
 
   # allow fontconfig to discover fonts and configurations installed through home.packages
   # Install fonts at system-level, not user-level
