@@ -70,6 +70,7 @@
         # General
         "browser.startup.page" = 3; # Open prev session pages
         "browser.tabs.unloadOnLowMemory" = true;
+        "widget.use-xdg-desktop-portal.file-picker" = 1;
         # Apperance
         "browser.newtabpage.activity-stream.feeds.topsites" = false;
         "browser.newtabpage.activity-stream.default.sites" = "";
