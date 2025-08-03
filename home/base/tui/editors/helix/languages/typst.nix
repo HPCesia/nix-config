@@ -8,6 +8,7 @@
           tab-width = 2;
           unit = "  ";
         };
+        soft-wrap.enable = true;
       }
     ];
     language-server.tinymist.config = {

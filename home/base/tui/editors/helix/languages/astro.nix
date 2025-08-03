@@ -9,6 +9,10 @@
           unit = "  ";
         };
         language-servers = ["astro-ls" "tailwindcss-ls"];
+        formatter = {
+          command = "prettier";
+          args = ["--stdin-filepath %{buffer_name}"];
+        };
       }
     ];
     language-server = {

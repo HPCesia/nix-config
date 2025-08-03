@@ -17,7 +17,7 @@
         ];
         formatter = {
           command = "prettier";
-          args = ["--parser" "markdown"];
+          args = ["--parser" "markdown" "--stdin-filepath %{buffer_name}"];
         };
         language-servers = ["marksman"];
       }
