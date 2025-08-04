@@ -22,7 +22,7 @@
         HTTP_PORT = 3125;
         PROTOCOL = "http";
         START_SSH_SERVER = true;
-        SSH_PORT = 2222;
+        SSH_PORT = 2233;
         ROOT_URL = "https://${config.services.forgejo.settings.server.DOMAIN}/";
       };
       # TODO: Enable federation after I finalize a suitable instance name and switch to an independent domain.
