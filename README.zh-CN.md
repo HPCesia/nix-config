@@ -12,12 +12,13 @@
 | **终端模拟器** | [WezTerm][wezterm] + [Ghostty][ghostty]                             |
 | **终端复用器** | [Zellij][zellij]                                                    |
 | **Shell**      | [Fish][fish] + [Starship][starship]                                 |
-| **输入法**     | [Fcitx5][fcitx5] + [Rime][rime]                                     |
+| **输入法**     | [Fcitx5][fcitx5] + [Rime][rime] (使用 [rime-ice][rime-ice])         |
 | **配色主题**   | [Catppuccin Macchiato][catppuccin]                                  |
 | **文件管理**   | [Yazi][yazi] + [Dolphin][kde-dolphin]                               |
 | **开发环境**   | [VSCode][vscode] + [Helix][helix] (with [Zide][zide])               |
-| **浏览器**     | [Firefox][firefox] + [Chromium][chromium] (backup)                  |
+| **浏览器**     | [Firefox][firefox] + [Chromium][chromium] (用于 PWA)                |
 | **机密管理**   | [sops-nix][sops-nix]，详见 [`./secrets`](./secrets/README.zh-CN.md) |
+| **媒体播放**   | [mpv][mpv] (视频) + [Quod Libet][quodlibet] (音乐)                  |
 
 ## 部署
 
@@ -60,7 +61,10 @@ colmena apply
 [kde-dolphin]: https://invent.kde.org/system/dolphin
 [kde-plasma]: https://invent.kde.org/plasma/plasma-desktop
 [mihomo]: https://github.com/MetaCubeX/mihomo
+[mpv]: https://github.com/mpv-player/mpv
+[quodlibet]: https://github.com/quodlibet/quodlibet
 [rime]: https://github.com/rime/librime
+[rime-ice]: https://github.com/iDvel/rime-ice
 [starship]: https://github.com/starship/starship
 [sops-nix]: https://github.com/Mic92/sops-nix
 [wezterm]: https://github.com/wezterm/wezterm

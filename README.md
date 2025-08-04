@@ -12,12 +12,13 @@ My Nix configuration for a NixOS laptop and a NixOS VPS.
 | **Terminal Emulator**       | [WezTerm][wezterm] + [Ghostty][ghostty]                      |
 | **Terminal Multiplexer**    | [Zellij][zellij]                                             |
 | **Shell**                   | [Fish][fish] + [Starship][starship]                          |
-| **Input Method**            | [Fcitx5][fcitx5] + [Rime][rime]                              |
+| **Input Method**            | [Fcitx5][fcitx5] + [Rime][rime] (use [rime-ice][rime-ice])   |
 | **Color Theme**             | [Catppuccin Macchiato][catppuccin]                           |
 | **File Manager**            | [Yazi][yazi] + [Dolphin][kde-dolphin]                        |
 | **Development Environment** | [VSCode][vscode] + [Helix][helix] (with [Zide][zide])        |
-| **Browser**                 | [Firefox][firefox] + [Chromium][chromium] (backup)           |
+| **Browser**                 | [Firefox][firefox] + [Chromium][chromium] (for PWA)          |
 | **Secret Management**       | [sops-nix][sops-nix], see [`./secrets`](./secrets/README.md) |
+| **Media Playback**          | [mpv][mpv] (Video) + [Quod Libet][quodlibet] (Music)         |
 
 ## Deployment
 
@@ -60,7 +61,10 @@ colmena apply
 [kde-dolphin]: https://invent.kde.org/system/dolphin
 [kde-plasma]: https://invent.kde.org/plasma/plasma-desktop
 [mihomo]: https://github.com/MetaCubeX/mihomo
+[mpv]: https://github.com/mpv-player/mpv
+[quodlibet]: https://github.com/quodlibet/quodlibet
 [rime]: https://github.com/rime/librime
+[rime-ice]: https://github.com/iDvel/rime-ice
 [starship]: https://github.com/starship/starship
 [sops-nix]: https://github.com/Mic92/sops-nix
 [wezterm]: https://github.com/wezterm/wezterm
