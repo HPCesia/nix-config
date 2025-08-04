@@ -6,18 +6,16 @@
 }: let
   inherit (lib.lists) concatLists;
 
-  chromiumCLA = {
-    commandLineArgs = concatLists [
-      ["--ozone-platform-hint=auto"]
-      ["--enable-wayland-ime"]
-      ["--wayland-text-input-version=3"]
-    ];
-  };
+  chromiumCLA = concatLists [
+    ["--ozone-platform-hint=auto"]
+    ["--enable-wayland-ime"]
+    ["--wayland-text-input-version=3"]
+  ];
 
   # Fix Chromium IME bug
-  cherrystudio = pkgs-unstable.cherry-studio.override chromiumCLA;
-  chromium = pkgs.chromium.override chromiumCLA;
-  qq = pkgs.qq.override chromiumCLA;
+  cherrystudio = pkgs-unstable.cherry-studio.override {commandLineArgs = chromiumCLA;};
+  chromium = pkgs.chromium.override {commandLineArgs = chromiumCLA ++ ["-–disable-features=GlobalShortcutsPortal"];};
+  qq = pkgs.qq.override {commandLineArgs = chromiumCLA;};
 in {
   home.packages = with pkgs; [
     # Message
