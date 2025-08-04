@@ -13,5 +13,6 @@
     # the Home Manager release notes for a list of state version
     # changes in each release.
     stateVersion = "25.05";
+    enableNixpkgsReleaseCheck = false; # Home Manager is unstable, but nixpkgs is stable.
   };
 }
