@@ -411,12 +411,19 @@ rule-providers:
     url: https://ruleset.skk.moe/Clash/ip/china_ip.txt
     path: ./rule_set/sukkaw_ruleset/china_ip.txt
 
+  my_services:
+    type: inline
+    behavior: classical
+    payload:
+     - DOMAIN-SUFFIX,hpcesia.com
+     - DOMAIN-SUFFIX,trin.one
+     - DOMAIN-SUFFIX,mxrouting.net
+
 # 分流规则
 rules:
   ### 自订类规则
-  - DOMAIN-SUFFIX,hpcesia.com,DIRECT
-  - DOMAIN-SUFFIX,trin.one,DIRECT
-  - DOMAIN-SUFFIX,mxrouting.net,DIRECT
+  - AND,((RULE-SET,my_services),(DST-PORT,80/443)),🎯 节点选择
+  - RULE-SET,my_services,DIRECT
 
   ### 非 IP 类规则
   - RULE-SET,reject_non_ip,REJECT
