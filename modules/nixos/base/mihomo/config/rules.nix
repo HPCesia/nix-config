@@ -1,4 +1,4 @@
-{...}: let
+{config, ...}: let
   RuleSet_classical = {
     type = "http";
     behavior = "classical";
@@ -24,8 +24,9 @@ in {
   services.mihomo.config = {
     rules = [
       # 自订类规则
-      "AND,((RULE-SET,my_services),(DST-PORT,80/443)),🎯 节点选择"
-      "RULE-SET,my_services,DIRECT"
+      "AND,((DOMAIN-SUFFIX,glacier.mxrouting.net),(DST-PORT,465/993)),DIRECT" # My Domain Email
+      "AND,((RULE-SET,my_hosts),(NOT,((DST-PORT,80/443)))),DIRECT" # My VPS
+
       # 非 IP 类规则
       "RULE-SET,reject_non_ip,REJECT"
       "RULE-SET,reject_domainset,REJECT"
@@ -47,6 +48,7 @@ in {
       "RULE-SET,domestic_non_ip,DIRECT"
       "RULE-SET,direct_non_ip,DIRECT"
       "RULE-SET,lan_non_ip,DIRECT"
+
       # IP 类规则
       "RULE-SET,reject_ip,REJECT"
       "RULE-SET,telegram_ip,✈️ 电报信息"
@@ -213,13 +215,11 @@ in {
           url = "https://ruleset.skk.moe/Clash/ip/china_ip.txt";
           path = "./rule_set/sukkaw_ruleset/china_ip.txt";
         };
-      my_services = {
+      my_hosts = {
         type = "inline";
         behavior = "classical";
         payload = [
-          "DOMAIN-SUFFIX,hpcesia.com"
-          "DOMAIN-SUFFIX,trin.one"
-          "DOMAIN-SUFFIX,mxrouting.net"
+          "IP-CIDR,${config.sops.placeholder.pardofelis-ipv4}/32"
         ];
       };
     };

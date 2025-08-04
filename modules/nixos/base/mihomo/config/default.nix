@@ -1,6 +1,7 @@
 {mylib, ...}: {
   imports = mylib.scanModules ./.;
 
+  # See /options/nixos/mihomo.nix
   services.mihomo.config = {
     mixed-port = 7154;
     allow-lan = true;
