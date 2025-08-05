@@ -19,6 +19,7 @@
 
     userDirs = {
       enable = true;
+      createDirectories = true;
       # Use English user directroy path
       desktop = "${config.home.homeDirectory}/Desktop";
       documents = "${config.home.homeDirectory}/Documents";
@@ -28,6 +29,9 @@
       publicShare = "${config.home.homeDirectory}/Public";
       templates = "${config.home.homeDirectory}/Templates";
       videos = "${config.home.homeDirectory}/Videos";
+      extraConfig = {
+        XDG_SCREENSHOTS_DIR = "${config.xdg.userDirs.pictures}/Screenshots";
+      };
     };
 
     mimeApps = {
@@ -58,6 +62,12 @@
         "x-scheme-handler/https" = browser;
         "x-scheme-handler/tg" = ["org.telegram.desktop.desktop "];
         "x-scheme-handler/tonsite" = ["org.telegram.desktop.desktop "];
+
+        "application/pdf" = ["readest.desktop"] ++ browser;
+        "application/epub+zip" = ["readest.desktop"];
+
+        "audio/*" = ["mpv.desktop" "deadbeef.desktop"];
+        "video/*" = ["mpv.desktop"];
       };
     };
   };
