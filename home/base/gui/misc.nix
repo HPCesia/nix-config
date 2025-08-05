@@ -5,9 +5,11 @@
 }: {
   home.packages = with pkgs; [
     geogebra
+    pkgs-unstable.readest # ebook reader
+
     wireshark # network analyzer
 
-    pkgs-unstable.readest # ebook reader
+    veracrypt
   ];
 
   programs.rbw.settings.pinentry = pkgs.pinentry-qt;
