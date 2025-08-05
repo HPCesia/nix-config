@@ -34,5 +34,6 @@
     kdepim-runtime
     kate
     elisa
+    okular
   ];
 }
