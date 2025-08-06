@@ -3,6 +3,15 @@
     enable = true;
     homedir = "${config.home.homeDirectory}/.gnupg";
 
+    mutableTrust = false;
+    mutableKeys = false;
+    publicKeys = [
+      {
+        source = ./public.asc;
+        trust = 5;
+      }
+    ];
+
     # This configuration is based on the tutorial below, it allows for a robust setup
     # https://blog.eleven-labs.com/en/openpgp-almost-perfect-key-pair-part-1
     # ~/.gnupg/gpg.conf
