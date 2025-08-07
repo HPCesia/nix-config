@@ -53,6 +53,7 @@
               "editor.guides.bracketPairs"
               "editor.formatOnSave"
               "terminal.integrated.fontSize"
+              "terminal.integrated.defaultProfile.linux"
               "workbench.colorTheme"
               "workbench.iconTheme"
               "workbench.startupEditor"
