@@ -14,6 +14,7 @@
   initialHashedPassword = "$7$CU..../....xQnray7Ah6GYybfmtsxmF.$k0F/eaOC2.9gXwXp0jgMrFM.fnMtFqYi3GZFaaJGsl3";
   # Public Keys that can be used to login to all my PC and servers.
   sshAuthorizedKeys = [
+    "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIEHQxm2Gym1C94eof7jPj56XR9a+aqCWzwri59njPFbWAAAABHNzaDo= me@hpcesia.com with PicoKey"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIyxd+nyK9cnULmzXIMhE1/rIB3VMsJ6SuWV4Ha8oE0F hpcesia@kevin"
   ];
 }
