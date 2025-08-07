@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  myvars,
   ...
 }: {
   # add user's shell into /etc/shells
@@ -23,5 +24,12 @@
   services = {
     gvfs.enable = true; # Mount, trash, and other functionalities
     tumbler.enable = true; # Thumbnail support for images
+  };
+
+  services.sunshine = {
+    enable = true;
+    autoStart = false;
+    openFirewall = true;
+    capSysAdmin = true;
   };
 }
