@@ -52,7 +52,7 @@ in {
     "开发" = {
       style = "row";
       columns = 3;
-      tab = "Home";
+      tab = "主页";
     };
     NestedGroup-1 = {
       header = false;
@@ -60,11 +60,11 @@ in {
       columns = 2;
       "工具" = {
         style = "column";
-        tab = "Home";
+        tab = "主页";
       };
       "阅读" = {
         style = "column";
-        tab = "Home";
+        tab = "主页";
       };
     };
   };
@@ -126,7 +126,7 @@ in {
       Trinnon = {
         href = "https://trin.one/";
         icon = "https://trin.one/fileserver/01H6611F79D6TD4PCS5YVHWFJZ/attachment/original/01JVQEQBVWB6EXGQ5WGR823C5Y.png";
-        siteMonitor = "https://trin.one/";
+        siteMonitor = "https://trin.one/livez";
       };
       Blog = {
         href = "https://blog.hpcesia.com/";
