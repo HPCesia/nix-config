@@ -63,8 +63,8 @@
         "x-scheme-handler/tg" = ["org.telegram.desktop.desktop "];
         "x-scheme-handler/tonsite" = ["org.telegram.desktop.desktop "];
 
-        "application/pdf" = ["readest.desktop"] ++ browser;
-        "application/epub+zip" = ["readest.desktop"];
+        "application/pdf" = ["okularApplication_pdf.desktop"] ++ browser;
+        "application/epub+zip" = ["okularApplication_epub.desktop"];
 
         "audio/*" = ["mpv.desktop" "deadbeef.desktop"];
         "video/*" = ["mpv.desktop"];
