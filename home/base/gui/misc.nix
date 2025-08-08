@@ -7,6 +7,7 @@
     geogebra
     pkgs-unstable.readest # ebook reader
     rnote
+    inkscape
 
     wireshark # network analyzer
 

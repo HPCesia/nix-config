@@ -28,6 +28,7 @@ in {
     obs-studio
     gimp3
     pot
+    libreoffice-qt6
   ];
 
   programs.chromium = {
