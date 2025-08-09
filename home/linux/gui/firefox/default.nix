@@ -36,18 +36,24 @@
           baidu.metaData.hidden = true;
         };
       };
-      extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
-        ublock-origin
-        bitwarden
-        tampermonkey
-        rsshub-radar
-        auto-tab-discard
-        aria2-integration
-        immersive-translate
-        firefox-color
-        plasma-integration
-        aw-watcher-web
-      ];
+      extensions.packages = let
+        my-addons = import ./addons (with pkgs; {
+          inherit lib fetchurl stdenv;
+          buildFirefoxXpiAddon = pkgs.nur.repos.rycee.firefox-addons.buildFirefoxXpiAddon;
+        });
+      in
+        with pkgs.nur.repos.rycee.firefox-addons; [
+          ublock-origin
+          bitwarden
+          tampermonkey
+          rsshub-radar
+          auto-tab-discard
+          aria2-integration
+          firefox-color
+          plasma-integration
+          aw-watcher-web
+          my-addons.lulu-translator
+        ];
       settings = {
         # No First Run
         "app.normandy.first_run" = false;
