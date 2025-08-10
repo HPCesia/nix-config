@@ -12,6 +12,7 @@
       db-address = "/var/lib/gotosocial/sqlite.db";
       storage-backend = "s3";
       storage-s3-bucket = "trin-one";
+      storage-s3-redirect-url = "https://asset.trin.one";
       # Instance
       landing-page-user = "hpcesia";
       instance-languages = ["zh-Hans"];
