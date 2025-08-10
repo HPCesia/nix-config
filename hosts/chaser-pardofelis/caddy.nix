@@ -1,8 +1,16 @@
 {
   myvars,
   config,
+  pkgs,
+  nur-hpcesia,
   ...
-}: {
+}: let
+  phanpy = nur-hpcesia.packages.${pkgs.system}.phanpy.overrideAttrs (oldAttrs: {
+    PHANPY_WEBSITE = "https://phanpy.trin.one";
+    PHANPY_DEFAULT_INSTANCE = "trin.one";
+    PHANPY_DISALLOW_ROBOTS = true;
+  });
+in {
   services.caddy = {
     enable = true;
     # Reload Caddy instead of restarting it when configuration file changes.
@@ -40,7 +48,6 @@
         encode zstd gzip
         reverse_proxy ${localAddress.atuin}
       '';
-
       "auth.trin.one".extraConfig = config.services.caddy.virtualHosts."authelia.hpcesia.com".extraConfig;
       "authelia.hpcesia.com".extraConfig = ''
         encode zstd gzip
@@ -65,6 +72,23 @@
           copy_headers Remote-User Remote-Groups Remote-Email Remote-Name
         }
         reverse_proxy ${localAddress.homepage}
+      '';
+      "phanpy.trin.one".extraConfig = ''
+        encode zstd gzip
+        root * ${phanpy}/dist/
+        file_server
+
+        @needsAuth {
+          not path / /favicon.ico /404.html /robots.txt /manifest.webmanifest
+          not path_regexp \.(css|js|png|jpg|svg|ico)$
+        }
+
+        handle @needsAuth {
+            forward_auth ${localAddress.authelia} {
+            uri /api/authz/forward-auth
+            copy_headers Remote-User Remote-Groups Remote-Email Remote-Name
+          }
+        }
       '';
       "prometheus.hpcesia.com".extraConfig = ''
         encode zstd gzip
