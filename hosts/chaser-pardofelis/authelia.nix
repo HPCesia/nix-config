@@ -22,44 +22,67 @@
           };
         };
         identity_validation.reset_password.jwt_algorithm = "HS512";
-        identity_providers.oidc.cors = {
-          endpoints = ["authorization" "token" "revocation" "introspection"];
-          allowed_origins = ["https://*.hpcesia.com" "https://*.trin.one"];
+        identity_providers.oidc = {
+          cors = {
+            endpoints = ["authorization" "token" "revocation" "introspection"];
+            allowed_origins = ["https://*.hpcesia.com" "https://*.trin.one"];
+          };
+          clients = [
+            {
+              # Refer: https://www.authelia.com/integration/openid-connect/clients/forgejo
+              client_id = "forgejo";
+              client_name = "Forgejo";
+              client_secret = ''{{ secret "${config.sops.secrets."authelia-main-client-secrets-forgejo".path}" }}'';
+              public = false;
+              authorization_policy = "two_factor";
+              require_pkce = true;
+              pkce_challenge_method = "S256";
+              redirect_uris = [
+                "https://repo.hpcesia.com/user/oauth2/Authelia/callback"
+              ];
+              scopes = ["openid" "email" "profile" "groups"];
+              response_types = ["code"];
+              grant_types = ["authorization_code"];
+              access_token_signed_response_alg = "none";
+              userinfo_signed_response_alg = "none";
+              token_endpoint_auth_method = "client_secret_basic";
+            }
+            {
+              # Refer: https://gokapi.readthedocs.io/en/latest/examples.html#oidcconfig-authelia
+              client_id = "gokapi";
+              client_name = "Tribios";
+              client_secret = ''{{ secret "${config.sops.secrets."authelia-main-client-secrets-gokapi".path}" }}'';
+              public = false;
+              authorization_policy = "one_factor";
+              redirect_uris = [
+                "https://send.hpcesia.com/oauth-callback"
+              ];
+              scopes = ["openid" "email" "profile" "groups"];
+              userinfo_signed_response_alg = "none";
+            }
+            {
+              # Refer: https://www.authelia.com/integration/openid-connect/clients/go-to-social
+              client_id = "gts-trinnon";
+              claims_policy = "gotosocial";
+              client_name = "Trinnon (GoToSocial)";
+              client_secret = ''{{ secret "${config.sops.secrets."authelia-main-client-secrets-gts-trinnon".path}" }}'';
+              public = false;
+              authorization_policy = "two_factor";
+              require_pkce = false;
+              pkce_challenge_method = "";
+              redirect_uris = [
+                "https://trin.one/auth/callback"
+              ];
+              scopes = ["openid" "email" "profile" "groups"];
+              response_types = ["code"];
+              grant_types = ["authorization_code"];
+              access_token_signed_response_alg = "none";
+              userinfo_signed_response_alg = "none";
+              token_endpoint_auth_method = "client_secret_basic";
+            }
+          ];
+          claims_policies.gotosocial.id_token = ["preferred_username"];
         };
-        identity_providers.oidc.clients = [
-          {
-            # Refer: https://www.authelia.com/integration/openid-connect/clients/forgejo
-            client_id = "forgejo";
-            client_name = "Forgejo";
-            client_secret = ''{{ secret "${config.sops.secrets."authelia-main-client-secrets-forgejo".path}" }}'';
-            public = false;
-            authorization_policy = "two_factor";
-            require_pkce = true;
-            pkce_challenge_method = "S256";
-            redirect_uris = [
-              "https://repo.hpcesia.com/user/oauth2/Authelia/callback"
-            ];
-            scopes = ["openid" "email" "profile" "groups"];
-            response_types = ["code"];
-            grant_types = ["authorization_code"];
-            access_token_signed_response_alg = "none";
-            userinfo_signed_response_alg = "none";
-            token_endpoint_auth_method = "client_secret_basic";
-          }
-          {
-            # Refer: https://gokapi.readthedocs.io/en/latest/examples.html#oidcconfig-authelia
-            client_id = "gokapi";
-            client_name = "Tribios";
-            client_secret = ''{{ secret "${config.sops.secrets."authelia-main-client-secrets-gokapi".path}" }}'';
-            public = false;
-            authorization_policy = "one_factor";
-            redirect_uris = [
-              "https://send.hpcesia.com/oauth-callback"
-            ];
-            scopes = ["openid" "email" "profile" "groups"];
-            userinfo_signed_response_alg = "none";
-          }
-        ];
         authentication_backend.file = {
           path = "/var/lib/authelia-main/users_database.yaml";
           password.algorithm = "argon2";
@@ -72,12 +95,18 @@
         };
         session.cookies = [
           {
-            name = "authelia_session";
             domain = "hpcesia.com";
             authelia_url = "https://authelia.hpcesia.com";
             expiration = "1 hour";
             inactivity = "5 minutes";
             remember_me = "2 week";
+          }
+          {
+            domain = "trin.one";
+            authelia_url = "https://auth.trin.one";
+            expiration = "1 hour";
+            inactivity = "5 minutes";
+            remember_me = "4 week";
           }
         ];
         access_control = {
@@ -89,7 +118,16 @@
               resources = ["^/api$" "^/api/"];
             }
             {
+              domain = "*.trin.one";
+              policy = "bypass";
+              resources = ["^/api$" "^/api/"];
+            }
+            {
               domain = "*.hpcesia.com";
+              policy = "one_factor";
+            }
+            {
+              domain = "*.trin.one";
               policy = "one_factor";
             }
           ];

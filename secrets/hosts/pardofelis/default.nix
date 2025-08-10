@@ -78,6 +78,10 @@ in
           name = "gotosocial-s3-secret-key";
           value = {key = "services/gotosocial/s3SecretKey";} // secretFileConf;
         }
+        {
+          name = "gotosocial-oidc-secret";
+          value = {key = "services/gotosocial/oidcSecret";} // secretFileConf;
+        }
         # === Authelia === #
         {
           name = "authelia-main-oidc-hmac-secret";
@@ -125,6 +129,13 @@ in
           name = "authelia-main-client-secrets-gokapi";
           value =
             {key = "services/authelia/main/clientSecrets/gokapi";}
+            // autheliaMainConf
+            // secretFileConf;
+        }
+        {
+          name = "authelia-main-client-secrets-gts-trinnon";
+          value =
+            {key = "services/authelia/main/clientSecrets/gts-trinnon";}
             // autheliaMainConf
             // secretFileConf;
         }

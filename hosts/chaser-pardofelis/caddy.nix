@@ -40,6 +40,8 @@
         encode zstd gzip
         reverse_proxy ${localAddress.atuin}
       '';
+
+      "auth.trin.one".extraConfig = config.services.caddy.virtualHosts."authelia.hpcesia.com".extraConfig;
       "authelia.hpcesia.com".extraConfig = ''
         encode zstd gzip
         reverse_proxy ${localAddress.authelia}
