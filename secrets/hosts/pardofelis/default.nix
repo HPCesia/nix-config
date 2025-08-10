@@ -82,6 +82,10 @@ in
           name = "gotosocial-oidc-secret";
           value = {key = "services/gotosocial/oidcSecret";} // secretFileConf;
         }
+        {
+          name = "gotosocial-smtp-password";
+          value = {key = "services/gotosocial/smtpPassword";} // secretFileConf;
+        }
         # === Authelia === #
         {
           name = "authelia-main-oidc-hmac-secret";
