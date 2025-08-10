@@ -47,7 +47,7 @@
             token_endpoint_auth_method = "client_secret_basic";
           }
           {
-            # Refer: https://www.authelia.com/integration/openid-connect/clients/forgejo
+            # Refer: https://gokapi.readthedocs.io/en/latest/examples.html#oidcconfig-authelia
             client_id = "gokapi";
             client_name = "Tribios";
             client_secret = ''{{ secret "${config.sops.secrets."authelia-main-client-secrets-gokapi".path}" }}'';
