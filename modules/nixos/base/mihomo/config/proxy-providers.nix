@@ -1,4 +1,8 @@
-{config, ...}: let
+{
+  lib,
+  config,
+  ...
+}: let
   NodeParam = {
     type = "http";
     interval = 86400;
@@ -9,7 +13,7 @@
     };
   };
 in {
-  services.mihomo.config.proxy-providers = {
+  services.mihomo.config.proxy-providers = lib.mkIf config.services.mihomo.enable {
     "Node-YiYuan" =
       NodeParam
       // {
