@@ -1,7 +1,7 @@
 {...}: {
   programs.plasma = {
     shortcuts = {
-      "services/org.wezfurlong.wezterm.desktop"._launch = "Meta+`";
+      "services/com.mitchellh.ghostty.desktop"._launch = "Meta+`";
     };
     hotkeys.commands = {
       pot = {
