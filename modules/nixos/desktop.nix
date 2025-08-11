@@ -17,6 +17,9 @@
     xserver = {
       enable = true;
       xkb.layout = "us";
+      excludePackages = with pkgs; [
+        xterm
+      ];
     };
     displayManager = {
       sddm.enable = true;
