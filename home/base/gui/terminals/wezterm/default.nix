@@ -10,7 +10,7 @@ in {
   catppuccin.wezterm.enable = false;
 
   programs.wezterm = {
-    enable = true;
+    # enable = true;
     package = pkgs-unstable.wezterm;
   };
 }
