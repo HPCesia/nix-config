@@ -112,17 +112,7 @@ in {
           id = "1";
           format = "%playstatus%";
           sort_format = "";
-          size = "50";
-          align = "0";
-          color_override = "0";
-          color = "#ff000000";
-        }
-        {
-          title = "艺人 / 专辑";
-          id = "-1";
-          format = "$if(%artist%,%artist%,Unknown Artist)[ - %album%]";
-          sort_format = "";
-          size = "138";
+          size = "30";
           align = "0";
           color_override = "0";
           color = "#ff000000";
@@ -132,27 +122,27 @@ in {
           id = "-1";
           format = "%title%";
           sort_format = "";
-          size = "150";
+          size = "250";
           align = "0";
           color_override = "0";
           color = "#ff000000";
         }
         {
-          title = "音轨号";
+          title = "艺人";
           id = "-1";
-          format = "%tracknumber%";
+          format = "$if(%artist%,%artist%,Unknown Artist)";
           sort_format = "";
-          size = "65";
-          align = "1";
+          size = "200";
+          align = "0";
           color_override = "0";
           color = "#ff000000";
         }
         {
-          title = "时长";
+          title = "专辑";
           id = "-1";
-          format = "%length%";
+          format = "%album%";
           sort_format = "";
-          size = "50";
+          size = "250";
           align = "0";
           color_override = "0";
           color = "#ff000000";
