@@ -65,6 +65,10 @@ in
           name = "restic-backup-password";
           value = {key = "services/restic/password";} // secretFileConf;
         }
+        {
+          name = "forgejo-runner-token";
+          value = {key = "services/forgejo-runner/token";} // secretFileConf;
+        }
         # === GoToSocial === #
         {
           name = "gotosocial-s3-endpoint";

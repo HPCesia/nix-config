@@ -33,6 +33,9 @@
         ENABLE_SSH_LOG = true; # Enable ssh log for fail2ban.
         "logger.router.MODE" = "Error";
       };
+      actions = {
+        ENABLED = true;
+      };
     };
   };
 
