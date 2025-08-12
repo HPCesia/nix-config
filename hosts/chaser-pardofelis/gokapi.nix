@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  myvars,
   ...
 }: {
   services.gokapi = {
@@ -8,6 +9,7 @@
     mutableSettings = true;
     environment = {
       GOKAPI_PORT = 53842;
+      GOKAPI_ADMIN_USER = myvars.useremail;
     };
     settings = {
       ServerUrl = "https://send.hpcesia.com/";
