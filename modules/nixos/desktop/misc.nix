@@ -32,4 +32,6 @@
     openFirewall = true;
     capSysAdmin = true;
   };
+
+  programs.nh.flake = "/home/${myvars.username}/nix-config";
 }
