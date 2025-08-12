@@ -27,7 +27,7 @@ in {
     cherrystudio
     obs-studio
     gimp3
-    pot
+    # pot
     libreoffice-qt6
   ];
 
