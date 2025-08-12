@@ -46,6 +46,21 @@
     };
   };
 
+  programs.plasma.input = {
+    touchpads = [
+      {
+        enable = true;
+        name = "SYNA2BA6:00 06CB:CF00 Touchpad";
+        productId = "cf00";
+        vendorId = "06cb";
+        disableWhileTyping = true;
+        naturalScroll = true;
+        tapToClick = true;
+        tapAndDrag = true;
+      }
+    ];
+  };
+
   programs.fastfetch.settings.logo = {
     type = "kitty-direct";
     source = "${nixos-logo}/nixos-griseo.png";

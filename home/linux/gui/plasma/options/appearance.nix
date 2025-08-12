@@ -19,7 +19,7 @@ in {
 
     workspace = {
       wallpaper = "${wallpapers}/default_wallpaper";
-      theme = "breeze-dark";
+      theme = "default";
       colorScheme = "CatppuccinMacchiatoMauve";
       iconTheme = "breeze-dark";
     };
