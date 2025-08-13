@@ -100,5 +100,13 @@
         keymap_mode = "vim-normal";
       };
     };
+
+    eza = {
+      enable = true;
+      enableBashIntegration = true;
+      enableFishIntegration = true;
+      icons = "auto";
+      git = true;
+    };
   };
 }

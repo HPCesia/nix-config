@@ -27,8 +27,9 @@ in {
     cherrystudio
     obs-studio
     gimp3
-    # pot
+    # pot # Disabled until pot update their tauri
     libreoffice-qt6
+    blender
   ];
 
   programs.chromium = {
