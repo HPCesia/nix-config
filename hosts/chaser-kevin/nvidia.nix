@@ -10,7 +10,7 @@ in {
     nixos-hardware.nixosModules.common-gpu-nvidia
   ];
 
-  services.xserver.videoDrivers = ["nvidia"]; # will install nvidia-vaapi-driver by default
+  services.xserver.videoDrivers = ["nvidia" "modesetting"]; # will install nvidia-vaapi-driver by default
   boot.initrd.kernelModules = ["nvidia"];
   boot.extraModulePackages = [config.boot.kernelPackages.nvidia_x11];
   boot.kernelParams = ["nvidia-drm.modeset=1"];
