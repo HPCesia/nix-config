@@ -30,4 +30,9 @@
   sops.defaultSopsFile = ./secrets.yaml;
 
   sops.secrets."github-access-token" = {};
+
+  sops.secrets."helix-gpt-secrets.env" = {
+    key = "helix-gpt";
+    owner = myvars.username;
+  };
 }
