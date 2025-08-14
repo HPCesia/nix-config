@@ -10,7 +10,7 @@
           start = "<!--";
           end = "-->";
         };
-        auto-format = true;
+        auto-format = false;
         indent = {
           tab-width = 2;
           unit = "  ";

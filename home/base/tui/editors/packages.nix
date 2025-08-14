@@ -92,6 +92,7 @@
       nodePackages.vscode-langservers-extracted # HTML/CSS/JSON/ESLint LSP extracted from vscode
       nodePackages."@tailwindcss/language-server"
       nodePackages."@astrojs/language-server"
+      vue-language-server
       stylelint-lsp
       nodePackages.prettier
     ];
