@@ -19,6 +19,7 @@ with pkgs.vscode-extensions;
     usernamehw.errorlens
     shardulm94.trailing-spaces
     gruntfuggly.todo-tree
+    editorconfig.editorconfig
 
     # LLM
     github.copilot
@@ -27,20 +28,20 @@ with pkgs.vscode-extensions;
     # Nix
     jnoortheen.nix-ide
 
-    # Nushell
-    thenuprojectcontributors.vscode-nushell-lang
+    # # Nushell
+    # thenuprojectcontributors.vscode-nushell-lang
 
     # Configuration languages
     tamasfe.even-better-toml
     redhat.vscode-yaml
   ]
   ++ (pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-    {
-      name = "git-commit-plugin";
-      publisher = "redjue";
-      version = "1.5.0";
-      sha256 = "fOdeUuB4jFL0LvGsLcjz5EQslD8jRRGslbumMo3cZCs=";
-    }
+    # {
+    #   name = "git-commit-plugin";
+    #   publisher = "redjue";
+    #   version = "1.5.0";
+    #   sha256 = "fOdeUuB4jFL0LvGsLcjz5EQslD8jRRGslbumMo3cZCs=";
+    # }
     {
       name = "aw-watcher-vscode";
       publisher = "activitywatch";

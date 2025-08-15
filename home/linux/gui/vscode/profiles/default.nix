@@ -8,6 +8,7 @@
   ...
 } @ args: let
   baseExtensions = import ../baseExtensions.nix args;
+  baseMcp = import ../baseMcp.nix;
   profilesList =
     (map (path: import path args) (mylib.scanModules ./.))
     ++ [
@@ -29,6 +30,7 @@
             "workbench.iconTheme" = "material-icon-theme";
             "workbench.startupEditor" = "none";
             # --- Extension Settings --- #
+            "git.enabled" = false; # Disable git because I use jujutsu instead
             "GitCommitPlugin.ShowEmoji" = false;
             "GitCommitPlugin.MaxSubjectCharacters" = 25;
             "github.copilot.advanced".useLanguageServer = true;
@@ -58,6 +60,7 @@
               "workbench.iconTheme"
               "workbench.startupEditor"
               # Extension
+              "git.enabled"
               "GitCommitPlugin.ShowEmoji"
               "GitCommitPlugin.MaxSubjectCharacters"
               "github.copilot.advanced"
@@ -71,12 +74,18 @@
         };
       }
     ];
-  profiles = lib.mergeAttrsList profilesList;
-  profilesWithBaseExtensions =
+  profiles =
     lib.mapAttrs
-    (_: v: (v // {extensions = v.extensions or [] ++ baseExtensions;}))
-    profiles;
+    (_: v: (v
+      // {
+        extensions = v.extensions or [] ++ baseExtensions;
+        userMcp = {
+          servers = lib.mergeAttrs baseMcp.servers v.userMcp.servers or {};
+          inputs = v.userMcp.inputs or [] ++ baseMcp.inputs;
+        };
+      }))
+    (lib.mergeAttrsList profilesList);
 in {
   catppuccin.vscode.profiles.default.icons.enable = false;
-  programs.vscode.profiles = profilesWithBaseExtensions;
+  programs.vscode.profiles = profiles;
 }
