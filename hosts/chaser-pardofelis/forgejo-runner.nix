@@ -16,7 +16,10 @@
         "nixos-latest:host"
       ];
       settings = {
-        container.network = "bridge";
+        container = {
+          network = "bridge";
+          enable_ipv6 = true;
+        };
       };
       hostPackages = with pkgs; [
         bash
