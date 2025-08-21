@@ -25,6 +25,23 @@
         SSH_PORT = 2233;
         ROOT_URL = "https://${config.services.forgejo.settings.server.DOMAIN}/";
       };
+      service = {
+        DISABLE_REGISTRATION = true;
+        ENABLE_NOTIFY_MAIL = true;
+        ENABLE_BASIC_AUTHENTICATION = false;
+      };
+      repository = {
+        DEFAULT_REPO_UNITS = "repo.code,repo.releases";
+      };
+      mailer = {
+        ENABLED = true;
+        PROTOCOL = "smtps";
+        SMTP_ADDR = "glacier.mxrouting.net";
+        SMTP_PORT = 465;
+        USER = "info@hpcesia.com";
+        FROM = "Forgejo Infomation <info@hpcesia.com>";
+        SUBJECT_PREFIX = "[repo.hpcesia.com] ";
+      };
       # TODO: Enable federation after I finalize a suitable instance name and switch to an independent domain.
       federation.ENABLED = false;
       session.COOKIE_SECURE = true;
@@ -36,6 +53,9 @@
       actions = {
         ENABLED = true;
       };
+    };
+    secrets = {
+      mailer.PASSWD = config.sops.secrets.forgejo-mailer-password.path;
     };
   };
 

@@ -62,6 +62,17 @@ in
             // secretFileConf;
         }
         {
+          name = "forgejo-mailer-password";
+          value =
+            {
+              key = "services/forgejo/mailerPassword";
+              owner = "root";
+              group = "forgejo";
+              mode = "0440";
+            }
+            // secretFileConf;
+        }
+        {
           name = "restic-backup-password";
           value = {key = "services/restic/password";} // secretFileConf;
         }
