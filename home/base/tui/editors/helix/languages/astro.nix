@@ -11,7 +11,7 @@
         language-servers = ["astro-ls" "tailwindcss-ls"];
         formatter = {
           command = "prettier";
-          args = ["--stdin-filepath %{buffer_name}"];
+          args = ["--parser" "astro" "--stdin-filepath" "%{buffer_name}"];
         };
       }
     ];

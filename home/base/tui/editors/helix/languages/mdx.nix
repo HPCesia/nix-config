@@ -24,7 +24,7 @@
         ];
         formatter = {
           command = "prettier";
-          args = ["--parser" "mdx" "--stdin-filepath %{buffer_name}"];
+          args = ["--parser" "mdx" "--stdin-filepath" "%{buffer_name}"];
         };
         language-servers = ["mdx-language-server"];
       }

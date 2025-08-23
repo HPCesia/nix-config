@@ -10,7 +10,7 @@
         };
         formatter = {
           command = "prettier";
-          args = ["--stdin-filepath %{buffer_name}"];
+          args = ["--parser" "ts" "--stdin-filepath" "%{buffer_name}"];
         };
       }
     ];
