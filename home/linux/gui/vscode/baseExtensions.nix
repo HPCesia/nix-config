@@ -24,6 +24,7 @@ with pkgs.vscode-extensions;
     # LLM
     github.copilot
     pkgs-unstable.vscode-extensions.github.copilot-chat
+    rooveterinaryinc.roo-cline
 
     # Nix
     jnoortheen.nix-ide
