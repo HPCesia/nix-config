@@ -1,15 +1,8 @@
 {
-  nixos-hardware,
   config,
   lib,
   ...
-}: let
-  nvidiaPackage = config.hardware.nvidia.package; # Nvidia ada lovelace
-in {
-  imports = [
-    nixos-hardware.nixosModules.common-gpu-nvidia
-  ];
-
+}: {
   services.xserver.videoDrivers = ["nvidia" "modesetting"]; # will install nvidia-vaapi-driver by default
   boot.initrd.kernelModules = ["nvidia"];
   boot.extraModulePackages = [config.boot.kernelPackages.nvidia_x11];
@@ -17,14 +10,17 @@ in {
 
   # Nvidia ada lovelace
   hardware.nvidia = {
+    package = config.boot.kernelPackages.nvidiaPackages.production;
+    open = false;
     modesetting.enable = true;
-    powerManagement.enable = true;
-    powerManagement.finegrained = true;
     prime = {
-      intelBusId = "PCI:00:02:0";
-      nvidiaBusId = "PCI:01:00:0";
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:1:0:0";
+      offload = {
+        enable = true;
+        enableOffloadCmd = lib.mkIf config.hardware.nvidia.prime.offload.enable true;
+      };
     };
-    open = lib.mkOverride 990 (nvidiaPackage ? open && nvidiaPackage ? firmware);
   };
 
   hardware.nvidia-container-toolkit.enable = true;

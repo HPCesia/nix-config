@@ -5,7 +5,7 @@
 }:
 #############################################################
 #
-#  Kevin - NixOS running on ThinkBook 16P 2024
+#  Kevin - NixOS running on ThinkBook 16P G5 IRX
 #  My main computer, with I7-14650HX + RTX4060 Laptop GPU + 48GB memory, for daily use.
 #
 #############################################################

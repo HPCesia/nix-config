@@ -12,10 +12,19 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
+  boot.initrd.systemd.enable = true;
   boot.initrd.availableKernelModules = ["xhci_pci" "nvme" "thunderbolt" "usbhid" "sdhci_pci"];
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
+
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 48 * 1024; # 48GB in MB
+      randomEncryption.enable = true;
+    }
+  ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/d1fb32f2-1dc0-435d-ad0f-1de0a121dbef";
@@ -46,10 +55,6 @@
     fsType = "exfat";
     options = ["uid=1000" "gid=100"];
   };
-
-  swapDevices = [
-    {device = "/dev/disk/by-uuid/39640e68-8296-4cdb-ab16-b9dfcd4ae743";}
-  ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
