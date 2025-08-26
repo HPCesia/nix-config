@@ -14,6 +14,8 @@
     ++ [
       {
         default = {
+          enableUpdateCheck = false;
+          enableExtensionUpdateCheck = false;
           userSettings = {
             # --- Editor Settings --- #
             "editor.fontSize" = 16;
@@ -21,9 +23,9 @@
             "editor.guides.bracketPairs" = true;
             "editor.formatOnSave" = true;
             "editor.unicodeHighlight.allowedLocales"."zh-hans" = true;
+            "editor.lineNumbers" = "relative";
             # --- Terminal Settings --- #
             "terminal.integrated.fontSize" = 14;
-            "terminal.integrated.minimumContrastRatio" = 1;
             "terminal.integrated.defaultProfile.linux" = "fish";
             # --- Workbench Settings --- #
             "workbench.colorTheme" = "Catppuccin Macchiato";
@@ -31,8 +33,8 @@
             "workbench.startupEditor" = "none";
             # --- Extension Settings --- #
             "git.enabled" = false; # Disable git because I use jujutsu instead
-            "GitCommitPlugin.ShowEmoji" = false;
-            "GitCommitPlugin.MaxSubjectCharacters" = 25;
+            # "GitCommitPlugin.ShowEmoji" = false;
+            # "GitCommitPlugin.MaxSubjectCharacters" = 25;
             "github.copilot.advanced".useLanguageServer = true;
             "nix.enableLanguageServer" = true;
             "nix.serverSettings".nil.formatting.command = ["alejandra"];
@@ -49,20 +51,21 @@
             "security.workspace.trust.untrustedFiles" = "open";
             "window.newWindowProfile" = "Default";
             "workbench.settings.applyToAllProfiles" = [
-              # Normal
+              # -- Normal -- #
               "editor.fontSize"
               "editor.fontLigatures"
               "editor.guides.bracketPairs"
               "editor.formatOnSave"
+              "editor.lineNumbers"
               "terminal.integrated.fontSize"
               "terminal.integrated.defaultProfile.linux"
               "workbench.colorTheme"
               "workbench.iconTheme"
               "workbench.startupEditor"
-              # Extension
+              # -- Extension -- #
               "git.enabled"
-              "GitCommitPlugin.ShowEmoji"
-              "GitCommitPlugin.MaxSubjectCharacters"
+              # "GitCommitPlugin.ShowEmoji"
+              # "GitCommitPlugin.MaxSubjectCharacters"
               "github.copilot.advanced"
               "nix.enableLanguageServer"
               "nix.serverSettings"

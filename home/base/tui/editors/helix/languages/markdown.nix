@@ -8,12 +8,14 @@
           tab-width = 2;
           unit = "  ";
         };
+        soft-wrap.enable = true;
         roots = [
           ".prettierignore"
           ".prettierrc"
           ".prettierrc.cjs"
           ".prettierrc.mjs"
           ".prettierrc.js"
+          ".marksman.toml"
         ];
         formatter = {
           command = "prettier";
